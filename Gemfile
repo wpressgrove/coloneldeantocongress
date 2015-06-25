@@ -45,8 +45,6 @@ gem 'rvm1-capistrano3', require: false
 gem 'figaro'
 gem 'launchy'
 
-gem 'honeybadger', '~> 2.0'
-
 group :production do
   gem 'rails_12factor'
   gem 'unicorn'
