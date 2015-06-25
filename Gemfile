@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby "2.1.2"
 
 gem 'rails', '4.2.1'
+gem 'pg'
 gem 'mysql'
 gem 'mysql2'
 
