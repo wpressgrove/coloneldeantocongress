@@ -15,6 +15,7 @@
  *= require global
  *= require main_header
  *= require main_nav
+ *= require main_footer
  *= require sidebar
  *= require foundation_and_overrides
 
