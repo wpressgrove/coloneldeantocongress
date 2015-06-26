@@ -11,3 +11,18 @@
   .sidebar-item.sidebar-donation-item
     .sidebar-title Make a quick donation here
     .sidebar-sub
+      .row
+        %form#sd_paypalform{action: "https://www.paypal.com/uk/cgi-bin/webscr", method: "post", name: "_xclick"}
+          %input#cmd{:name => "cmd", :type => "hidden", :value => "_donations"}
+          %input{:name => "no_shipping", :type => "hidden", :value => "2"}
+          %input{:name => "no_note", :type => "hidden", :value => "1"}
+          %input{:name => "tax", :type => "hidden", :value => "0"}
+          %input{name: 'item_name', type: 'hidden', value: 'ColonelDeanToCongress.org'}
+          %input.sd_object.paypal_object{:name => "business", :type => "hidden", :value => "Colonel.DeanToCongress@yahoo.com"}/
+          %input.sd_object.paypal_object{:name => "bn", :type => "hidden", :value => "Colonel Andre Dean"}/
+          %input.sd_object.paypal_object{:name => "currency_code", :type => "hidden", :value => "USD"}/
+
+          .columns.small-7
+            = select_tag :amount, options_for_select(['$25', '$50', '$100', '$250', '$500', '$1000', '$2600'], '$25')
+          .columns.small-5
+            = submit_tag 'DONATE'
