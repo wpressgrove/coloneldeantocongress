@@ -12,5 +12,14 @@
     .columns.small-10
       .home-sidebar-date-description
         .title= link_to 'Woodmen of the World Meeting', '#'
-        .time July 2nd @6:30 PM
-        .address Woodmen of the World Lodge
+        .time
+          = fa_icon 'clock-o'
+          July 2nd @6:30 PM
+        .address
+          = fa_icon 'map-marker'
+          Woodmen of the World Lodge
+
+  .row
+    .columns.small-12
+      .more-events
+        = link_to 'More Events', '#'
