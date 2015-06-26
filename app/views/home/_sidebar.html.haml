@@ -1,25 +1,26 @@
-.home-sidebar-item
-  %h5 Featured Interview
-  = audio_tag 'dean.mp3', controls: true
+.home-sidebar-list
+  .home-sidebar-item
+    %h5 Featured Interview
+    = audio_tag 'dean.mp3', controls: true
 
-.home-sidebar-item
-  %h5 Upcoming Events
-  .row
-    .columns.small-2
-      .home-sidebar-date
-        .day 02
-        .month Jul
-    .columns.small-10
-      .home-sidebar-date-description
-        .title= link_to 'Woodmen of the World Meeting', '#'
-        .time
-          = fa_icon 'clock-o'
-          July 2nd @6:30 PM
-        .address
-          = fa_icon 'map-marker'
-          Woodmen of the World Lodge
+  .home-sidebar-item
+    %h5 Upcoming Events
+    .row
+      .columns.small-2
+        .home-sidebar-date
+          .day 02
+          .month Jul
+      .columns.small-10
+        .home-sidebar-date-description
+          .title= link_to 'Woodmen of the World Meeting', '#'
+          .time
+            = fa_icon 'clock-o'
+            July 2nd @6:30 PM
+          .address
+            = fa_icon 'map-marker'
+            Woodmen of the World Lodge
 
-  .row
-    .columns.small-12
-      .more-events
-        = link_to 'More Events', '#'
+    .row
+      .columns.small-12
+        .more-events
+          = link_to 'More Events', '#'
