@@ -5,3 +5,16 @@
       #main-header-name
         Colonel Dean
         #main-header-year 2015
+#main-nav
+  .row
+    .columns.large-12.show-for-large-up
+      %ul.main-nav-list
+        %li.active
+          = link_to root_path, class: 'main-nav-item main-nav-home' do
+            = fa_icon 'home'
+        %li= link_to 'About', root_path, class: 'main-nav-item'
+        %li= link_to 'Dean Family', root_path, class: 'main-nav-item'
+        %li= link_to 'News / Media', root_path, class: 'main-nav-item'
+        %li= link_to 'Hot Issues', root_path, class: 'main-nav-item'
+        %li= link_to 'Calendar', root_path, class: 'main-nav-item'
+        %li= link_to 'DONATE', root_path, class: 'main-nav-item main-nav-donate'

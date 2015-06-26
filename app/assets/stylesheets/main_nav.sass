@@ -1,0 +1,69 @@
+$nav-height: 65px
+$nav-border-color: #DEE0E5
+$nav-highlight-color: #63B2F5
+
+#main-nav
+  background: #F2F4F9
+  height: $nav-height
+  border-top: 1px solid #000
+  border-bottom: 1px solid $nav-border-color
+
+  ul
+    display: table
+    width: 100%
+    height: $nav-height - 2px //for border
+    list-style: none
+    margin: 0px
+    padding: 0px
+
+    li
+      display: table-cell
+      margin: 0px
+      padding: 0px
+      height: $nav-height - 2px //for border
+      border-left: 1px solid $nav-border-color
+
+      &:first-child
+        width: 60px !important
+
+      &:hover
+        background: $nav-highlight-color !important
+
+        a
+          color: #FFF !important
+
+      &:last-child
+        background: #A82512
+
+        a
+          color: #FFF !important
+
+      &:last-child:hover
+        background: #BE2E17 !important
+
+        a
+          color: #FFF !important
+
+      .main-nav-item
+        display: inline-block
+        color: #3E474C
+        text-align: center
+        line-height: $nav-height - 2px //for border
+        width: 100%
+
+        &.main-nav-home
+          color: #3E474C
+          border-left: none
+
+          i
+            font-size: 24px
+
+        a
+          color: #3E474C
+
+      &.active
+        background: $nav-highlight-color
+        color: #FFF
+
+        .main-nav-home
+          color: #FFF
