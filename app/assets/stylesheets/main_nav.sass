@@ -1,3 +1,5 @@
+@import "global"
+
 $nav-height: 65px
 $nav-border-color: #DEE0E5
 $nav-highlight-color: #63B2F5
@@ -67,3 +69,26 @@ $nav-highlight-color: #63B2F5
 
         .main-nav-home
           color: #FFF
+
+@media #{$medium-down}
+  #main-nav
+    height: initial
+
+    ul
+      margin: 15px 0px
+      display: block !important
+      height: initial
+
+      li
+        padding: 5px 5px 5px 15px
+        display: block !important
+        height: initial
+        border-top: 1px solid $nav-border-color
+        border-right: 1px solid $nav-border-color
+
+        &:first-child
+          width: initial !important
+
+        .main-nav-item
+          text-align: left
+          line-height: 15px
