@@ -1,7 +1,28 @@
+$header-logo-height: 65px
+
 #main-header
   background: #274472
   padding: 17px 0px
 
   #main-header-logo
+    float: left
+
     img
-      width: 65px
+      width: $header-logo-height
+
+  #main-header-name
+    float: left
+    position: relative
+    margin-left: 10px
+    font-family: 'Cinzel',serif
+    font-weight: 300
+    font-size: 40px
+    line-height: $header-logo-height
+    color: #FFF
+    letter-spacing: 0
+
+    #main-header-year
+      font-size: 14px
+      position: absolute
+      top: -16px
+      right: 2px
