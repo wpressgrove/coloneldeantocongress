@@ -1,11 +1,24 @@
 #main-header
   .row
-    .columns.small-12
+    .columns.small-12.large-5
       #main-header-logo= image_tag 'logo.png'
       #main-header-name
         Colonel Dean
         #main-header-year 2015
         #main-header-sub for Texas District 8 Congressman
+    .column.small-12.large-3
+      #main-header-quote
+        .line1 Courageous Conservative
+        .line2 Tea Party Leadership
+    .column.small-12.large-4
+      #main-header-email-signup-container
+        .title
+          %span SIGN UP
+          FOR EMAIL UPDATES
+        .form
+          = text_field_tag :email, nil, placeholder: 'Email address'
+          = link_to '#' do
+            = fa_icon 'long-arrow-right'
 
 #main-nav
   .row

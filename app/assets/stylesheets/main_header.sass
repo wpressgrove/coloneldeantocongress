@@ -1,3 +1,5 @@
+@import "global"
+
 $header-logo-height: 65px
 
 #main-header
@@ -5,6 +7,7 @@ $header-logo-height: 65px
   padding: 17px 0px
 
   #main-header-logo
+    margin-top: 12px
     float: left
 
     img
@@ -12,6 +15,7 @@ $header-logo-height: 65px
 
   #main-header-name
     float: left
+    margin-top: 12px
     position: relative
     margin-left: 10px
     font-family: 'Cinzel',serif
@@ -36,3 +40,66 @@ $header-logo-height: 65px
       color: #EEE
       width: 100%
       text-align: center
+
+  #main-header-quote
+    display: inline-block
+    margin-top: 5px
+    color: #97ACC3
+    font-size: 18px
+    font-style: italic
+    height: 88px
+    margin-top: 20px
+
+    .line1
+      line-height: 24px
+      text-align: left
+
+    .line2
+      line-height: 24px
+      text-align: right
+      margin-right: -25px
+
+  #main-header-email-signup-container
+    float: right
+    display: inline-block
+    height: 88px
+    background: rgba(255, 255, 255, 0.1)
+    border-radius: 5px
+    padding: 15px
+
+    .title
+      font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif
+      font-size: 14px
+      color: #FFF
+
+      span
+        font-weight: bold
+
+    .form
+      input[type="text"]
+        float: left
+        border-radius: 5px
+        width: 200px
+        margin-bottom: 0px
+        margin-right: 15px
+
+      a
+        float: left
+        color: #FFF
+        padding: 5px 10px
+        border-radius: 5px
+        background: #63B2F5
+        font-size: 18px
+
+        &:hover
+          background: #274472
+
+@media #{$medium-down}
+  #main-header-quote
+    .line1, .line2
+      text-align: center !important
+      margin-right: 0px !important
+
+  #main-header-email-signup-container
+    width: initial !important
+    float: none !important
