@@ -1,13 +1,15 @@
 @import "global"
 
 $header-logo-height: 65px
+$header-height: 88px
+$header-quote-margin: 20px
 
 #main-header
   background: #274472
   padding: 17px 0px
 
   #main-header-logo
-    margin-top: 12px
+    margin-top: ($header-height - $header-logo-height) / 2
     float: left
 
     img
@@ -15,7 +17,7 @@ $header-logo-height: 65px
 
   #main-header-name
     float: left
-    margin-top: 12px
+    margin-top: ($header-height - $header-logo-height) / 2
     position: relative
     margin-left: 10px
     font-family: 'Cinzel',serif
@@ -47,22 +49,22 @@ $header-logo-height: 65px
     color: #97ACC3
     font-size: 18px
     font-style: italic
-    height: 88px
-    margin-top: 20px
+    height: $header-height - $header-quote-margin
+    margin-top: $header-quote-margin
 
     .line1
-      line-height: 24px
+      line-height: ($header-height - ($header-quote-margin * 2)) / 2
       text-align: left
 
     .line2
-      line-height: 24px
+      line-height: ($header-height - ($header-quote-margin * 2)) / 2
       text-align: right
       margin-right: -25px
 
   #main-header-email-signup-container
     float: right
     display: inline-block
-    height: 88px
+    height: $header-height
     background: rgba(255, 255, 255, 0.1)
     border-radius: 5px
     padding: 15px
