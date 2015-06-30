@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_paper_trail
   rolify
 
   # Include default devise modules. Others available are:
