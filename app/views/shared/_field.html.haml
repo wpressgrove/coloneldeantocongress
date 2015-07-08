@@ -1,0 +1,26 @@
+.field
+  - if defined?(title) && defined?(tooltip)
+    %span.has-tip{data: {tooltip: true}, 'aria-haspopup' => true, title: tooltip}= title
+  - elsif defined?(title)
+    = f.label field, title
+  - elsif defined?(tooltip)
+    %span.has-tip{data: {tooltip: true}, 'aria-haspopup' => true, title: tooltip}= field.titleize
+  - else
+    = f.label field
+  - if object.errors[field].any?
+    - object.errors.full_messages_for(field.to_sym).each do |error|
+      .error_message
+        = error
+  - if field_type == 'text_area'
+    = f.text_area field, {class: ((object.errors[field].any?)? 'error' : ''), value: (object[field].nil?)? ((duplicate.nil?)? '' : duplicate[field]) : object[field]}
+  - elsif field_type == 'select'
+    - if object.errors[field].any?
+      = f.select field, grouped_options_for_select(group_options, [field_value]), {}, {class: 'error', value: (field_value.nil?)? ((duplicate.nil?)? '' : duplicate[field]) : field_value}
+    - else
+      = f.select field, grouped_options_for_select(group_options, [field_value]), {}, {value: (field_value.nil?)? ((duplicate.nil?)? '' : duplicate[field]) : field_value}
+  - elsif field_type == 'date_picker'
+    = f.text_field field, {class: ((object.errors[field].any?)? 'error' : ''), value: field_value}
+  - elsif field_type == 'password'
+    = f.password_field field, {class: ((object.errors[field].any?)? 'error' : ''), value: (object[field].nil?)? ((duplicate.nil?)? '' : duplicate[field]) : object[field]}
+  - else
+    = f.text_field field, {class: ((object.errors[field].any?)? 'error' : ''), value: (object[field].nil?)? ((duplicate.nil?)? '' : duplicate[field]) : object[field]}

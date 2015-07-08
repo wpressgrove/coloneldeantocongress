@@ -8,6 +8,25 @@
 html, body
   height: 100%
 
+.errors
+  h2
+    color: #C60F13
+    font-size: 14px
+
+  .form_error
+    background-color: #C60F13
+    border: none
+
+input.error, textarea.error
+  margin-bottom: 14px !important
+
+.error_message
+  color: rgb(198, 15, 19)
+
+select.error
+  border-color: #C60F13
+  background-color: rgba(198, 15, 19, 0.1)
+
 #main-content
   width: calc(100% - $left-nav-width)
   margin-left: $left-nav-width
