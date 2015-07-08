@@ -16,10 +16,8 @@
     %thead
       %tr
         %th Email
-        - if can? :update, User
-          %th
-        - if can? :destroy, User
-          %th
+        %th Edit
+        %th Delete
         
     %tbody
       - @users.each do |user|
