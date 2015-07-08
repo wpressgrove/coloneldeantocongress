@@ -1,0 +1,20 @@
+#left-nav
+  - unless current_user.nil?
+    %ul.nav-menu
+      - if can? :create, User
+        %li{class: (is_on_controllers_path(['users', 'roles']))? 'active' : 'users-nav'}
+          = link_to admin_users_path do
+            .nav-menu-title 
+              = fa_icon "user"
+              Users
+          %ul.sub-nav-menu
+            %li{class: (is_on_controllers_path(['users', 'roles']) && params[:action] == 'new')? 'active' : ''}
+              = link_to new_admin_user_path do
+                .sub-nav-menu-title 
+                  = fa_icon "plus"
+                  New User
+            %li{class: (is_on_controllers_path(['users', 'roles']) && params[:action] != 'new')? 'active' : ''}
+              = link_to admin_users_path do
+                .sub-nav-menu-title 
+                  = fa_icon "users"
+                  Manage Users

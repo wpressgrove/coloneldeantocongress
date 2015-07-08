@@ -5,7 +5,7 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title Colonel Dean to Congress
-    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'admin', media: 'all'
     = stylesheet_link_tag params[:controller]
     = javascript_include_tag 'vendor/modernizr'
     = javascript_include_tag 'application'
@@ -16,4 +16,6 @@
       %p{class: 'notice'}= notice
     - unless alert.nil?
       %p{class: 'alert'}= alert
+    = render 'shared/admin/top_bar'
+    = render 'shared/admin/left_nav'
     = yield

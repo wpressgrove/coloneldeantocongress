@@ -1,0 +1,141 @@
+@import "admin/variables"
+
+*
+  margin: 0
+  padding: 0
+  word-wrap: break-word !important
+
+html, body
+  height: 100%
+
+/***** FIX FOUNDATION STUFF *****/
+.top-bar
+  position: fixed !important
+  top: 0px
+  width: 100%
+  z-index: 1000
+
+  a
+    display: inline !important
+    padding: 15px !important
+
+#left-nav
+  position: fixed
+  padding-top: 0px
+  top: 45px
+  z-index: 999
+  width: $left-nav-width
+  background-color: #333
+  height: calc(100% - 45px)
+  float: left
+
+  ul
+    padding: 0px
+    margin: 0px
+    list-style: none !important
+
+    &.nav-menu
+      > li
+        border-top: 1px solid #222 !important
+ 
+        &:nth-of-type(1)
+          border-top: 0 !important
+
+        &:last-of-type
+          border-bottom: 1px solid #222
+      li
+        text-align: left !important
+        position: relative
+
+        i
+          margin-right: 1em
+
+    &.sub-nav-menu li
+      font-size: .8em
+      padding-left: 1em
+      &.active
+        background: #003d56
+        &:after
+          content: ''
+          position: absolute
+          z-index: 10
+          right: 0
+          top: 0
+          width: 0
+          height: 0
+          border-style: solid
+          border-width: 20.5px 10px 20.5px 0
+          border-color: transparent #f2f2f2 transparent transparent
+          line-height: 0px
+          _border-color: #000000 #f2f2f2 #000000 #000000
+          _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000')
+
+    a, a:active
+      color: #BBB
+
+      &:hover
+        color: $highlight
+
+    li
+      text-align: right
+      position: relative
+      border-top: 1px solid #AAA
+
+      .nav-menu-title
+        padding: 8px 12px
+        color: #FFF
+
+      a:hover
+        .nav-menu-title
+          color: $highlight
+
+      &.active
+        .nav-menu-title
+          background-color: $highlight
+          color: #FFF
+
+        a, a:hover, a:active
+          .nav-menu-title
+            color: #FFF
+
+        ul.sub-nav-menu
+          display: block !important
+          position: relative
+          left: 0px
+          border-left: none
+            
+
+      ul.sub-nav-menu
+        display: none
+        position: absolute
+        top: 0px
+        right: -200px
+        width: 200px
+        background-color: #1A1A1A
+        padding: 10px 0px
+
+        .sub-nav-menu-title
+          padding: 8px 12px
+
+        li
+          border: none
+
+          input[type="submit"].sub-nav-menu-title
+            background: none
+            border: none
+            color: #BBB
+            font-size: 16px
+            cursor: pointer
+
+          &.active
+            a, a:hover, a:active
+              color: #FFF
+
+            input[type="submit"].sub-nav-menu-title
+              color: #FFF
+
+#left-nav
+  ul
+    &:hover
+      ul.sub-nav-menu
+        display: block
