@@ -1,0 +1,31 @@
+.users-page
+  .row
+    .column.large-3
+      &nbsp
+    .column.large-6
+      %h1 Users
+    .column.large-3.new-user
+      - if can? :create, User
+        = link_to new_admin_user_path do
+          = fa_icon "user-plus"
+          %br
+          New 
+          %br
+          User
+  %table
+    %thead
+      %tr
+        %th Email
+        - if can? :update, User
+          %th
+        - if can? :destroy, User
+          %th
+        
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.email
+          - if can? :update, user
+            %td= link_to 'Edit', edit_admin_user_path(user)
+          - if can? :destroy, user
+            %td= link_to 'Delete', [:admin, user], :method => :delete, :data => { :confirm => 'Are you sure?' }

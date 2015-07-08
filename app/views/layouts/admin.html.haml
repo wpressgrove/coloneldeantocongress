@@ -18,4 +18,6 @@
       %p{class: 'alert'}= alert
     = render 'shared/admin/top_bar'
     = render 'shared/admin/left_nav'
-    = yield
+    #main-content
+      .top-margin
+      = yield
