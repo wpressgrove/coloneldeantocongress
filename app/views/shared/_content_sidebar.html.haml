@@ -3,26 +3,4 @@
     %h5 Featured Interview
     = audio_tag 'dean.mp3', controls: true
 
-  - event = next_event
-  - unless event.nil?
-    .sidebar-item
-      %h5 Upcoming Events
-      .row
-        .columns.small-2
-          .sidebar-date
-            .day= event.time.strftime('%d') rescue 0
-            .month= event.time.strftime('%b') rescue 'Jan'
-        .columns.small-10
-          .sidebar-date-description
-            .title= link_to event.title, '#'
-            .time
-              = fa_icon 'clock-o'
-              = event.time.strftime('%B %d @%l:%M %p')
-            .address
-              = fa_icon 'map-marker'
-              = event.location
-
-      .row
-        .columns.small-12
-          .more-events
-            = link_to 'More Events', '#'
+  = render 'shared/upcoming_events', event: next_event(0), title: true

@@ -5,7 +5,7 @@ module ApplicationHelper
     flag
   end
 
-  def next_event
-    Event.where("time >= ?", Time.now.beginning_of_day).order("time ASC").first
+  def next_event(count)
+    Event.where("time >= ?", Time.now.beginning_of_day).order("time ASC")[count]
   end
 end
