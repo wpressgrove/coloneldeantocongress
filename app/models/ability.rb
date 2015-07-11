@@ -4,5 +4,6 @@ class Ability
   def initialize(user)
     can :manage, [Page, User]
     cannot :destroy, User, email: user.email
+    cannot :destroy, Page, required: true
   end
 end

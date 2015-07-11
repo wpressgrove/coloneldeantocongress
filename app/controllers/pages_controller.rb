@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  layout 'plain'
+
   def index
     @page = Page.all.first
     render 'pages/show'
