@@ -2,7 +2,7 @@ class Admin::EventsController < AdminController
   load_and_authorize_resource
 
   def index
-    @events = Event.all
+    @events = Event.all.order("time ASC")
   end
 
   def new
