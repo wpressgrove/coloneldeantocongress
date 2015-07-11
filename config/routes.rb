@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/" => "dashboard#index"
     resources :dashboard, only: [:index]
-    resources :pages
-    resources :users
+    resources :pages, only: [:index, :new, :edit, :create, :update, :destroy]
+    resources :users, only: [:index, :new, :edit, :create, :update, :destroy]
   end
 end
