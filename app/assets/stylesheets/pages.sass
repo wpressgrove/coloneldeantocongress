@@ -1,6 +1,6 @@
 @import "global"
 
-#home-slider
+#slider
   overflow: hidden
   margin-top: 50px
   margin-bottom: 50px
@@ -20,19 +20,19 @@
       &:hover
         background: #008CBA
 
-#home-content-container
+#content-container
   background: #F2F4F9
   padding-top: 50px
   padding-bottom: 25px
 
-  #home-content-title
+  #content-title
     h5
       text-transform: uppercase
       font-family: sans-serif
       font-weight: bold
       color: #3E474C
 
-  #home-content
+  #content
     color: #3E474C
 
     h5
@@ -44,10 +44,10 @@
     img
       width: 100%
 
-  .home-sidebar-list
+  .sidebar-list
     margin-top: 35px
 
-    .home-sidebar-item
+    .sidebar-item
       background: #FFF
       border-radius: 5px
       padding: 25px 0px
@@ -65,7 +65,7 @@
         font-weight: bold
         text-transform: uppercase
 
-      .home-sidebar-date
+      .sidebar-date
         background: #EBF4FC
         border-radius: 5px
         margin: 0px 15px
@@ -78,7 +78,7 @@
         .day
           font-weight: bold
 
-      .home-sidebar-date-description
+      .sidebar-date-description
         font-family: sans-serif
         color: #95999E
         font-size: 13px
@@ -108,7 +108,7 @@
               display: none
 
 @media #{$medium-down}
-  #home-content-container
-    #home-content
+  #content-container
+    #content
       .story
         margin-bottom: 50px

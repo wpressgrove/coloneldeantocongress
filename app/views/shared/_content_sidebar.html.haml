@@ -1,17 +1,17 @@
-.home-sidebar-list
-  .home-sidebar-item
+.sidebar-list
+  .sidebar-item
     %h5 Featured Interview
     = audio_tag 'dean.mp3', controls: true
 
-  .home-sidebar-item
+  .sidebar-item
     %h5 Upcoming Events
     .row
       .columns.small-2
-        .home-sidebar-date
+        .sidebar-date
           .day 02
           .month Jul
       .columns.small-10
-        .home-sidebar-date-description
+        .sidebar-date-description
           .title= link_to 'Woodmen of the World Meeting', '#'
           .time
             = fa_icon 'clock-o'
