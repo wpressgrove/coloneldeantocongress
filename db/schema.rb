@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711051341) do
+ActiveRecord::Schema.define(version: 20150711060722) do
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.string   "location",    limit: 255
+    t.datetime "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["time"], name: "index_events_on_time", using: :btree
+  add_index "events", ["title"], name: "index_events_on_title", using: :btree
 
   create_table "pages", force: :cascade do |t|
     t.string   "name",       limit: 255

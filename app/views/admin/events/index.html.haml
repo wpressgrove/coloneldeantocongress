@@ -1,0 +1,31 @@
+.events-page
+  .row
+    .column.large-3
+      &nbsp
+    .column.large-6
+      %h1 Events
+    .column.large-3.new-event
+      - if can? :create, Event
+        = link_to new_admin_event_path do
+          = fa_icon "plus"
+          %br
+          New 
+          %br
+          Event
+  %table
+    %thead
+      %tr
+        %th Title
+        %th Time
+        %th Edit
+        %th Delete
+        
+    %tbody
+      - @events.each do |event|
+        %tr
+          %td= event.title
+          %td= (event.time.strftime('%b %d %I:%M %p') rescue '')
+          - if can? :update, event
+            %td= link_to 'Edit', edit_admin_event_path(event)
+          - if can? :destroy, event
+            %td= link_to 'Delete', [:admin, event], :method => :delete, :data => { :confirm => 'Are you sure?' }

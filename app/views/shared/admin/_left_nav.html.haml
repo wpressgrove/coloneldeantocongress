@@ -18,6 +18,24 @@
                 = fa_icon "files-o"
                 Manage Pages
   %ul.nav-menu
+    - if can? :create, Event
+      %li{class: (is_on_controllers_path(['events']))? 'active' : 'events-nav'}
+        = link_to admin_events_path do
+          .nav-menu-title
+            = fa_icon "calendar"
+            Events
+        %ul.sub-nav-menu
+          %li{class: (is_on_controllers_path(['events']) && params[:action] == 'new')? 'active' : ''}
+            = link_to new_admin_event_path do
+              .sub-nav-menu-title
+                = fa_icon "plus"
+                New Event
+          %li{class: (is_on_controllers_path(['events']) && params[:action] != 'new')? 'active' : ''}
+            = link_to admin_events_path do
+              .sub-nav-menu-title
+                = fa_icon "calendar"
+                Manage Events
+  %ul.nav-menu
     - if can? :create, User
       %li{class: (is_on_controllers_path(['users', 'roles']))? 'active' : 'users-nav'}
         = link_to admin_users_path do

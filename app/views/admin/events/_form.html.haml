@@ -1,0 +1,17 @@
+= form_for [:admin, @event] do |f|
+  = render 'shared/form_error_messages', object: @event, name: 'Event'
+
+  = render 'shared/field', f: f, field_type: 'text_field', object: @event, duplicate: nil, field: 'title'
+  = render 'shared/field', f: f, field_type: 'date_picker', field_value: (@event.time.strftime('%Y-%m-%d %I:%M %p') rescue ''), object: @event, duplicate: nil, field: 'time'
+  = render 'shared/field', f: f, field_type: 'text_field', object: @event, duplicate: nil, field: 'location'
+  = render 'shared/field', f: f, field_type: 'text_area', object: @event, duplicate: nil, field: 'description'
+
+  .actions
+    = f.submit 'Save', class: 'button tiny'
+
+= link_to 'Back', admin_events_path
+
+= javascript_include_tag 'jquery-ui'
+= javascript_include_tag 'timepicker'
+= stylesheet_link_tag 'jquery-ui', media: 'all'
+= stylesheet_link_tag 'timepicker', media: 'all'
