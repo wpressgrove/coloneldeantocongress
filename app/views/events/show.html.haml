@@ -1,9 +1,17 @@
-#content-container
-  .sidebar-list
+#events
+  #event-container
     .row
+      .columns.small-12.large-8
+        %h5 Description
+        = @event.description
       .columns.small-12.large-4
-        = render 'shared/upcoming_events', event: next_event(0), title: true
-      .columns.small-12.large-4
-        = render 'shared/upcoming_events', event: next_event(1), title: false
-      .columns.small-12.large-4
-        = render 'shared/upcoming_events', event: next_event(2), title: false
+        = render 'events/sidebar', event: @event
+  #content-container
+    .sidebar-list
+      .row
+        .columns.small-12.large-4
+          = render 'shared/upcoming_events', event: next_event(0), title: true
+        .columns.small-12.large-4
+          = render 'shared/upcoming_events', event: next_event(1), title: false
+        .columns.small-12.large-4
+          = render 'shared/upcoming_events', event: next_event(2), title: false

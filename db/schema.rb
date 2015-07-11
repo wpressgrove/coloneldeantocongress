@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711060722) do
+ActiveRecord::Schema.define(version: 20150711164359) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20150711060722) do
     t.datetime "time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug",        limit: 255
   end
 
+  add_index "events", ["slug"], name: "index_events_on_slug", using: :btree
   add_index "events", ["time"], name: "index_events_on_time", using: :btree
   add_index "events", ["title"], name: "index_events_on_title", using: :btree
 
@@ -32,10 +34,12 @@ ActiveRecord::Schema.define(version: 20150711060722) do
     t.boolean  "has_header", limit: 1,   default: true
     t.boolean  "has_footer", limit: 1,   default: true
     t.boolean  "required",   limit: 1,   default: false
+    t.string   "slug",       limit: 255
   end
 
   add_index "pages", ["name"], name: "index_pages_on_name", using: :btree
   add_index "pages", ["required"], name: "index_pages_on_required", using: :btree
+  add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",          limit: 255

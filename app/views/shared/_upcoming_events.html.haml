@@ -11,7 +11,7 @@
           .month= event.time.strftime('%b') rescue 'Jan'
       .columns.small-10
         .sidebar-date-description
-          .title= link_to event.title, event_path(event)
+          .title= link_to event.title, event_path(event.slug)
           .time
             = fa_icon 'clock-o'
             = event.time.strftime('%B %d @%l:%M %p')

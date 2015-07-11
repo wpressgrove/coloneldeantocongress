@@ -6,6 +6,6 @@ module ApplicationHelper
   end
 
   def next_event(count)
-    Event.where("time >= ?", Time.now.beginning_of_day).order("time ASC")[count]
+    Event.next_event(count)
   end
 end

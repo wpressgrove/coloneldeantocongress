@@ -1,0 +1,26 @@
+.sidebar-items
+  .sidebar-item
+    .sidebar-icon= fa_icon 'calendar'
+    .sidebar-title Start Date
+    .sidebar-sub= event.time.strftime('%B %d')
+  .sidebar-item
+    .sidebar-icon= fa_icon 'clock-o'
+    .sidebar-title Start Time
+    .sidebar-sub= event.time.strftime('%l:%M %p')
+  .sidebar-item
+    .sidebar-icon= fa_icon 'map-marker'
+    .sidebar-title Event Location
+    .sidebar-sub= event.location
+  .sidebar-item
+    .sidebar-icon= fa_icon 'share-alt'
+    .sidebar-title Share This
+    .sidebar-sub
+      .facebook.social-media-icon
+        = link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", target: '_blank' do
+          = fa_icon 'facebook'
+      .twitter.social-media-icon
+        = link_to "https://twitter.com/intent/tweet?text=#{request.original_url}&source=webclient", target: '_blank' do
+          = fa_icon 'twitter'
+      .google-plus.social-media-icon
+        = link_to "https://plus.google.com/share?url=#{request.original_url}", target: '_blank' do
+          = fa_icon 'google-plus'
