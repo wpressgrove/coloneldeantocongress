@@ -1,0 +1,8 @@
+= form_for [:admin, @page] do |f|
+  = render 'shared/form_error_messages', object: @page, name: 'Page'
+
+  = render 'shared/field', f: f, field_type: 'text_field', object: @page, duplicate: nil, field: 'name'
+  .actions
+    = f.submit 'Save', class: 'button tiny'
+
+= link_to 'Back', admin_pages_path

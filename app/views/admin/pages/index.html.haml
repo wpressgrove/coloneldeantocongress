@@ -1,0 +1,29 @@
+.pages-page
+  .row
+    .column.large-3
+      &nbsp
+    .column.large-6
+      %h1 Pages
+    .column.large-3.new-page
+      - if can? :create, Page
+        = link_to new_admin_page_path do
+          = fa_icon "plus"
+          %br
+          New 
+          %br
+          Page
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Edit
+        %th Delete
+        
+    %tbody
+      - @pages.each do |page|
+        %tr
+          %td= page.name
+          - if can? :update, page
+            %td= link_to 'Edit', edit_admin_page_path(page)
+          - if can? :destroy, page
+            %td= link_to 'Delete', [:admin, page], :method => :delete, :data => { :confirm => 'Are you sure?' }

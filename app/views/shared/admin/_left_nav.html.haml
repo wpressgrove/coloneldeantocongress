@@ -1,20 +1,37 @@
 #left-nav
-  - unless current_user.nil?
-    %ul.nav-menu
-      - if can? :create, User
-        %li{class: (is_on_controllers_path(['users', 'roles']))? 'active' : 'users-nav'}
-          = link_to admin_users_path do
-            .nav-menu-title 
-              = fa_icon "user"
-              Users
-          %ul.sub-nav-menu
-            %li{class: (is_on_controllers_path(['users', 'roles']) && params[:action] == 'new')? 'active' : ''}
-              = link_to new_admin_user_path do
-                .sub-nav-menu-title 
-                  = fa_icon "plus"
-                  New User
-            %li{class: (is_on_controllers_path(['users', 'roles']) && params[:action] != 'new')? 'active' : ''}
-              = link_to admin_users_path do
-                .sub-nav-menu-title 
-                  = fa_icon "users"
-                  Manage Users
+  %ul.nav-menu
+    - if can? :create, Page
+      %li{class: (is_on_controllers_path(['pages']))? 'active' : 'pages-nav'}
+        = link_to admin_pages_path do
+          .nav-menu-title 
+            = fa_icon "file"
+            Pages
+        %ul.sub-nav-menu
+          %li{class: (is_on_controllers_path(['pages']) && params[:action] == 'new')? 'active' : ''}
+            = link_to new_admin_page_path do
+              .sub-nav-menu-title 
+                = fa_icon "plus"
+                New Page
+          %li{class: (is_on_controllers_path(['pages']) && params[:action] != 'new')? 'active' : ''}
+            = link_to admin_pages_path do
+              .sub-nav-menu-title 
+                = fa_icon "files-o"
+                Manage Pages
+  %ul.nav-menu
+    - if can? :create, User
+      %li{class: (is_on_controllers_path(['users', 'roles']))? 'active' : 'users-nav'}
+        = link_to admin_users_path do
+          .nav-menu-title 
+            = fa_icon "user"
+            Users
+        %ul.sub-nav-menu
+          %li{class: (is_on_controllers_path(['users', 'roles']) && params[:action] == 'new')? 'active' : ''}
+            = link_to new_admin_user_path do
+              .sub-nav-menu-title 
+                = fa_icon "plus"
+                New User
+          %li{class: (is_on_controllers_path(['users', 'roles']) && params[:action] != 'new')? 'active' : ''}
+            = link_to admin_users_path do
+              .sub-nav-menu-title 
+                = fa_icon "users"
+                Manage Users
