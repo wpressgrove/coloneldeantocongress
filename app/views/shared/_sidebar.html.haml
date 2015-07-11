@@ -5,9 +5,10 @@
       .sidebar-title Listen to Colonel Dean
       .sidebar-sub on KMVL, 100.5 FM with Paul and Becky
   .sidebar-item
-    .sidebar-icon= fa_icon 'calendar'
-    .sidebar-title Find events
-    .sidebar-sub mark your calendars
+    = link_to events_path do
+      .sidebar-icon= fa_icon 'calendar'
+      .sidebar-title Find events
+      .sidebar-sub mark your calendars
   .sidebar-item.sidebar-donation-item
     .sidebar-title Make a quick donation here
     .sidebar-sub
