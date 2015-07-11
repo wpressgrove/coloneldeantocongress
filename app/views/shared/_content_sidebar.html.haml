@@ -3,24 +3,26 @@
     %h5 Featured Interview
     = audio_tag 'dean.mp3', controls: true
 
-  .sidebar-item
-    %h5 Upcoming Events
-    .row
-      .columns.small-2
-        .sidebar-date
-          .day 02
-          .month Jul
-      .columns.small-10
-        .sidebar-date-description
-          .title= link_to 'Woodmen of the World Meeting', '#'
-          .time
-            = fa_icon 'clock-o'
-            July 2nd @6:30 PM
-          .address
-            = fa_icon 'map-marker'
-            Woodmen of the World Lodge
+  - event = next_event
+  - unless event.nil?
+    .sidebar-item
+      %h5 Upcoming Events
+      .row
+        .columns.small-2
+          .sidebar-date
+            .day= event.time.strftime('%d') rescue 0
+            .month= event.time.strftime('%b') rescue 'Jan'
+        .columns.small-10
+          .sidebar-date-description
+            .title= link_to event.title, '#'
+            .time
+              = fa_icon 'clock-o'
+              = event.time.strftime('%B %d @%l:%M %p')
+            .address
+              = fa_icon 'map-marker'
+              = event.location
 
-    .row
-      .columns.small-12
-        .more-events
-          = link_to 'More Events', '#'
+      .row
+        .columns.small-12
+          .more-events
+            = link_to 'More Events', '#'
