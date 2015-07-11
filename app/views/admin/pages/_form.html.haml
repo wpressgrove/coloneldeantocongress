@@ -1,7 +1,11 @@
 = form_for [:admin, @page] do |f|
   = render 'shared/form_error_messages', object: @page, name: 'Page'
 
-  = render 'shared/field', f: f, field_type: 'text_field', object: @page, duplicate: nil, field: 'name'
+  - if @page.required
+    = @page.name
+  - else
+    = render 'shared/field', f: f, field_type: 'text_field', object: @page, duplicate: nil, field: 'name'
+
   .field
     = f.check_box :has_header
     = f.label :has_header, 'Show Header'
