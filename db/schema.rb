@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716141133) do
+ActiveRecord::Schema.define(version: 20150717011611) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20150716141133) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "sidebar_items", force: :cascade do |t|
+    t.integer  "page_id",    limit: 4
+    t.integer  "order",      limit: 4
+    t.string   "name",       limit: 255
+    t.text     "body",       limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,             null: false

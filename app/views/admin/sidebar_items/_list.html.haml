@@ -1,0 +1,7 @@
+.sidebar-list
+  - page.sidebar_items.each do |sidebar_item|
+    = render 'sidebar_items/item', page: page, sidebar_item: sidebar_item, admin: true
+
+%br
+
+= link_to 'Add Item to Sidebar', new_admin_page_sidebar_item_path(page)

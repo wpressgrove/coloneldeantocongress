@@ -38,8 +38,7 @@ class Admin::PagesController < AdminController
   end
 
   private
-
-  def page_params
-    params.require(:page).permit(:name, :has_header, :has_footer, :body)
-  end
+    def page_params
+      params.require(:page).permit(:name, :has_header, :has_footer, :body)
+    end
 end

@@ -9,6 +9,7 @@
     border-radius: 5px
     margin-bottom: 5px
     overflow: hidden
+    border: 1px solid #DEE0E5
 
     .sidebar-icon
       i
@@ -72,67 +73,67 @@
         i
           color: rgb(156, 203, 248)
 
-#content-container
-  .sidebar-list
-    margin-top: 35px
+.sidebar-list
+  margin-top: 35px
 
-    .sidebar-item
-      background: #FFF
-      border-radius: 5px
-      padding: 25px 0px
+  .sidebar-item
+    background: #FFF
+    border-radius: 5px
+    padding: 25px 0px
+    margin-bottom: 25px
+    border: 1px solid #DEE0E5
+
+    audio
+      width: 100%
+
+    h5
+      font-family: sans-serif
+      color: #3E474C
+      padding: 0px 15px
       margin-bottom: 25px
+      font-size: 18px
+      font-weight: bold
+      text-transform: uppercase
 
-      audio
-        width: 100%
+    .sidebar-date
+      background: #EBF4FC
+      border-radius: 5px
+      margin: 0px 15px
+      width: 100%
+      text-align: center
 
-      h5
-        font-family: sans-serif
-        color: #3E474C
-        padding: 0px 15px
-        margin-bottom: 25px
-        font-size: 18px
+      .day
         font-weight: bold
-        text-transform: uppercase
 
-      .sidebar-date
-        background: #EBF4FC
-        border-radius: 5px
-        margin: 0px 15px
-        width: 100%
-        text-align: center
+      &:hover
+        background: #63B2F5
+        color: #FFF
 
-        .day
-          font-weight: bold
+    .sidebar-date-description
+      font-family: sans-serif
+      color: #95999E
+      font-size: 13px
 
-        &:hover
-          background: #63B2F5
-          color: #FFF
+    .more-events
+      position: relative
+      display: inline-block
+      margin-top: 20px
+      margin-left: 15px
 
-      .sidebar-date-description
-        font-family: sans-serif
-        color: #95999E
-        font-size: 13px
+      a
+        &:after
+          border-left-color: #808CA4 !important
+          left: calc(100% + 8px)
+          top: 50%
+          content: " "
+          height: 0
+          width: 0
+          position: absolute
+          border: solid transparent
+          border-width: 5px
+          margin-top: -4px
 
-      .more-events
-        position: relative
-        display: inline-block
-        margin-top: 20px
-        margin-left: 15px
-
+      &:hover
         a
           &:after
-            border-left-color: #808CA4 !important
-            left: calc(100% + 8px)
-            top: 50%
-            content: " "
-            height: 0
-            width: 0
-            position: absolute
-            border: solid transparent
-            border-width: 5px
-            margin-top: -4px
-
-        &:hover
-          a
-            &:after
-              display: none
+            display: none

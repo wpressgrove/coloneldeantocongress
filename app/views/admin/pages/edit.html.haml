@@ -1,5 +1,11 @@
-%h1
-  Edit
-  = @page.name
+.pages-page
+  %h1
+    Edit
+    = @page.name
 
-= render 'form'
+  = render 'form'
+
+  %br
+
+  .sidebar-list-container
+    = render 'admin/sidebar_items/list', page: @page

@@ -15,6 +15,10 @@
         = render 'shared/content_sidebar'
 - else
   .row
-    .columns.small-12= @page.body.html_safe
+    .columns.small-12.large-8= @page.body.html_safe
+    .columns.small-12.large-4
+      .sidebar-list
+        - @page.sidebar_items.each do |sidebar_item|
+          = render 'sidebar_items/item', page: @page, sidebar_item: sidebar_item, admin: false
 - if @page.has_footer
   = render 'shared/footer'
