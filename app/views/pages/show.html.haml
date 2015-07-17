@@ -1,16 +1,20 @@
 - if @page.has_header
   = render 'shared/header'
-.row
-  .columns.small-12.large-8
-    = render 'shared/slider'
-  .columns.small-12.large-4
-    = render 'shared/sidebar'
-
-#content-container
+- if @page.name == 'Home'
   .row
     .columns.small-12.large-8
-      = render 'shared/content'
+      = render 'shared/slider'
     .columns.small-12.large-4
-      = render 'shared/content_sidebar'
+      = render 'shared/sidebar'
+
+  #content-container
+    .row
+      .columns.small-12.large-8
+        = render 'shared/content'
+      .columns.small-12.large-4
+        = render 'shared/content_sidebar'
+- else
+  .row
+    .columns.small-12= @page.body.html_safe
 - if @page.has_footer
   = render 'shared/footer'
