@@ -9,7 +9,6 @@ gem 'mysql2'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails', '~> 5.5.1'
-gem "gritter", "1.1.0"
 gem 'will_paginate', '~> 3.0.6'
 gem 'compass'
 gem 'therubyracer', '0.10.2'
