@@ -4,7 +4,6 @@ class Admin::SidebarItemsController < AdminController
   before_action :set_sidebar_item
 
   def create
-    @sidebar_item.rank = @page.sidebar_items.last.rank.to_i + 1
     if @sidebar_item.update_attributes(sidebar_item_params)
       redirect_to edit_admin_page_path(@page)
     else
@@ -41,7 +40,7 @@ class Admin::SidebarItemsController < AdminController
     end
 
     def set_sidebar_item
-      @sidebar_item = @page.sidebar_items.find(params[:id]) rescue @page.sidebar_items.new
+      @sidebar_item = @page.sidebar_items.find(params[:id]) rescue @page.sidebar_items.new({rank: @page.sidebar_items.last.rank.to_i + 1})
     end
 
     def set_page
