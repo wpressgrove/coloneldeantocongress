@@ -1,4 +1,5 @@
 User.create({email: 'mike.hoffert@gmail.com', password: 'password', password_confirmation: 'password'}) rescue nil
+User.create({email: 'colonel.deantocongress@yahoo.com', password: 'password', password_confirmation: 'password'}) rescue nil
 Page.create({name: 'Home', body: '', required: true}) rescue nil
 Page.create({name: 'About', body: '', required: true}) rescue nil
 Event.create({title: 'Madison County Tea Party', location: 'Madison County Tea Party', time: '2015-07-17 17:00:00'}) rescue nil
