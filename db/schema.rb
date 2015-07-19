@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717011611) do
+ActiveRecord::Schema.define(version: 20150719142144) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150717011611) do
 
   create_table "sidebar_items", force: :cascade do |t|
     t.integer  "page_id",    limit: 4
-    t.integer  "order",      limit: 4
+    t.integer  "rank",       limit: 4
     t.string   "name",       limit: 255
     t.text     "body",       limit: 65535
     t.datetime "created_at"

@@ -3,13 +3,13 @@
   = sidebar_item.body.html_safe
   - if admin
     = link_to 'Edit', edit_admin_page_sidebar_item_path(page, sidebar_item)
-    - if sidebar_item.order > 1
+    - if sidebar_item.rank > 1
       |
       = form_for [:admin, page, sidebar_item], remote: true do |f|
-        = f.hidden_field :order, value: (sidebar_item.order - 1)
+        = f.hidden_field :rank, value: (sidebar_item.rank - 1)
         = f.submit 'Move Up'
     - if sidebar_item != page.sidebar_items.last
       |
       = form_for [:admin, page, sidebar_item], remote: true do |f|
-        = f.hidden_field :order, value: (sidebar_item.order + 1)
+        = f.hidden_field :rank, value: (sidebar_item.rank + 1)
         = f.submit 'Move Down'

@@ -4,7 +4,7 @@ class Admin::SidebarItemsController < AdminController
   before_action :set_sidebar_item
 
   def create
-    @sidebar_item.order = @page.sidebar_items.last.order.to_i + 1
+    @sidebar_item.rank = @page.sidebar_items.last.rank.to_i + 1
     if @sidebar_item.update_attributes(sidebar_item_params)
       redirect_to edit_admin_page_path(@page)
     else
@@ -13,19 +13,19 @@ class Admin::SidebarItemsController < AdminController
   end
 
   def update
-    @sidebar_item.order = @page.sidebar_items.last.order.to_i + 1 if @sidebar_item.order.nil?
-    sidebar_item = @page.sidebar_items.find_by_order(params[:sidebar_item][:order]) rescue nil
-    sidebar_item_original_order = @sidebar_item.order
-    sidebar_item.update_column(:order, 99) unless sidebar_item.nil?
-    @sidebar_item.order 
+    @sidebar_item.rank = @page.sidebar_items.last.rank.to_i + 1 if @sidebar_item.rank.nil?
+    sidebar_item = @page.sidebar_items.find_by_rank(params[:sidebar_item][:rank]) rescue nil
+    sidebar_item_original_rank = @sidebar_item.rank
+    sidebar_item.update_column(:rank, 99) unless sidebar_item.nil?
+    @sidebar_item.rank
     if @sidebar_item.update_attributes(sidebar_item_params)
-      sidebar_item.update_column(:order, sidebar_item_original_order) unless sidebar_item.nil?
+      sidebar_item.update_column(:rank, sidebar_item_original_rank) unless sidebar_item.nil?
       respond_to do |format|
         format.html { redirect_to edit_admin_page_path(@page) }
         format.js {}
       end
     else
-      sidebar_item.update_column(:order, params[:sidebar_item][:order]) unless sidebar_item.nil?
+      sidebar_item.update_column(:rank, params[:sidebar_item][:rank]) unless sidebar_item.nil?
       render 'edit'
     end
   end
@@ -37,7 +37,7 @@ class Admin::SidebarItemsController < AdminController
 
   private
     def sidebar_item_params
-      params.require(:sidebar_item).permit(:name, :body, :order)
+      params.require(:sidebar_item).permit(:name, :body, :rank)
     end
 
     def set_sidebar_item

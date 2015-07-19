@@ -4,7 +4,7 @@ class SidebarItem < ActiveRecord::Base
   validates :page_id, presence: true
   validates :name, presence: true
   validates :body, presence: true
-  validates :order, presence: true, uniqueness: {scope: :page_id}
+  validates :rank, presence: true, uniqueness: {scope: :page_id}
 
-  default_scope { order("`order` ASC") }
+  default_scope { order("rank ASC") }
 end
