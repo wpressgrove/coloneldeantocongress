@@ -1,54 +1,54 @@
 #left-nav
   %ul.nav-menu
     - if can? :create, Page
-      %li{class: (is_on_controllers_path(['pages']))? 'active' : 'pages-nav'}
+      %li{class: (is_on_controllers_path(['admin/pages']))? 'active' : 'pages-nav'}
         = link_to admin_pages_path do
           .nav-menu-title 
             = fa_icon "file"
             Pages
         %ul.sub-nav-menu
-          %li{class: (is_on_controllers_path(['pages']) && params[:action] == 'new')? 'active' : ''}
+          %li{class: (is_on_controllers_path(['admin/pages']) && params[:action] == 'new')? 'active' : ''}
             = link_to new_admin_page_path do
               .sub-nav-menu-title 
                 = fa_icon "plus"
                 New Page
-          %li{class: (is_on_controllers_path(['pages']) && params[:action] != 'new')? 'active' : ''}
+          %li{class: (is_on_controllers_path(['admin/pages']) && params[:action] != 'new')? 'active' : ''}
             = link_to admin_pages_path do
               .sub-nav-menu-title 
                 = fa_icon "files-o"
                 Manage Pages
   %ul.nav-menu
     - if can? :create, Event
-      %li{class: (is_on_controllers_path(['events']))? 'active' : 'events-nav'}
+      %li{class: (is_on_controllers_path(['admin/events']))? 'active' : 'events-nav'}
         = link_to admin_events_path do
           .nav-menu-title
             = fa_icon "calendar"
             Events
         %ul.sub-nav-menu
-          %li{class: (is_on_controllers_path(['events']) && params[:action] == 'new')? 'active' : ''}
+          %li{class: (is_on_controllers_path(['admin/events']) && params[:action] == 'new')? 'active' : ''}
             = link_to new_admin_event_path do
               .sub-nav-menu-title
                 = fa_icon "plus"
                 New Event
-          %li{class: (is_on_controllers_path(['events']) && params[:action] != 'new')? 'active' : ''}
+          %li{class: (is_on_controllers_path(['admin/events']) && params[:action] != 'new')? 'active' : ''}
             = link_to admin_events_path do
               .sub-nav-menu-title
                 = fa_icon "calendar"
                 Manage Events
   %ul.nav-menu
     - if can? :create, User
-      %li{class: (is_on_controllers_path(['users', 'roles']))? 'active' : 'users-nav'}
+      %li{class: (is_on_controllers_path(['admin/users', 'admin/roles']))? 'active' : 'users-nav'}
         = link_to admin_users_path do
           .nav-menu-title 
             = fa_icon "user"
             Users
         %ul.sub-nav-menu
-          %li{class: (is_on_controllers_path(['users', 'roles']) && params[:action] == 'new')? 'active' : ''}
+          %li{class: (is_on_controllers_path(['admin/users', 'admin/roles']) && params[:action] == 'new')? 'active' : ''}
             = link_to new_admin_user_path do
               .sub-nav-menu-title 
                 = fa_icon "plus"
                 New User
-          %li{class: (is_on_controllers_path(['users', 'roles']) && params[:action] != 'new')? 'active' : ''}
+          %li{class: (is_on_controllers_path(['admin/users', 'admin/roles']) && params[:action] != 'new')? 'active' : ''}
             = link_to admin_users_path do
               .sub-nav-menu-title 
                 = fa_icon "users"
