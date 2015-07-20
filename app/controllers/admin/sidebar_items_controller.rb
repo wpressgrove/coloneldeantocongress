@@ -12,7 +12,7 @@ class Admin::SidebarItemsController < AdminController
   end
 
   def update
-    @sidebar_item.rank = @page.sidebar_items.last.rank.to_i + 1 if @sidebar_item.rank.nil?
+    @sidebar_item.rank = (@page.sidebar_items.last.rank.to_i rescue 0) + 1 if @sidebar_item.rank.nil?
     sidebar_item = @page.sidebar_items.find_by_rank(params[:sidebar_item][:rank]) rescue nil
     sidebar_item_original_rank = @sidebar_item.rank
     sidebar_item.update_column(:rank, 99) unless sidebar_item.nil?
@@ -40,7 +40,7 @@ class Admin::SidebarItemsController < AdminController
     end
 
     def set_sidebar_item
-      @sidebar_item = @page.sidebar_items.find(params[:id]) rescue @page.sidebar_items.new({rank: @page.sidebar_items.last.rank.to_i + 1})
+      @sidebar_item = @page.sidebar_items.find(params[:id]) rescue @page.sidebar_items.new({rank: (@page.sidebar_items.last.rank.to_i rescue 0) + 1})
     end
 
     def set_page
