@@ -1,6 +1,6 @@
 - if @page.has_header
   = render 'shared/header'
-- if @page.name == 'Home'
+- if @page.slug == 'home'
   .row
     .columns.small-12.large-8
       = render 'shared/slider'
@@ -15,7 +15,11 @@
         = render 'shared/content_sidebar'
 - else
   .row
-    .columns.small-12{class: "#{(@page.sidebar_items.any?)? 'large-8' : 'large-12'}"}= @page.body.html_safe
+    .columns.small-12{class: "#{(@page.sidebar_items.any?)? 'large-8' : 'large-12'}"}
+      - if @page.slug == 'about'
+        .row
+          .columns.small-12= render 'shared/slider'
+      = @page.body.html_safe
     - if @page.sidebar_items.any?
       .columns.small-12.large-4
         .sidebar-list.custom-sidebar

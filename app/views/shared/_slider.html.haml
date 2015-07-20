@@ -1,10 +1,17 @@
 #slider
   %ul{"data-orbit" => "", "data-options" => "slide_number:false;resume_on_mouseout:true;timer:true;bullets:false;"}
-    %li.active
-      = image_tag 'full_banner.jpg'
-    %li
-      = image_tag 'ted_cruz_short.jpg'
-      .orbit-caption Lt. Colonel Dean and Senator Ted Cruz, March 2015
-    %li
-      = image_tag 'family.jpg'
-      .orbit-caption Dean Family, April 2015 including 2 of our 3 precious grandbabies
+    - if @page.slug == 'home'
+      %li.active
+        = image_tag 'full_banner.jpg'
+      %li
+        = image_tag 'ted_cruz_short.jpg'
+        .orbit-caption Lt. Colonel Dean and Senator Ted Cruz, March 2015
+      %li
+        = image_tag 'family.jpg'
+        .orbit-caption Dean Family, April 2015 including 2 of our 3 precious grandbabies
+    - elsif @page.slug == 'about'
+      %li.active
+        = image_tag 'dianne.jpg'
+      %li
+        = image_tag 'family.jpg'
+        .orbit-caption Dean Family, April 2015 including 2 of our 3 precious grandbabies
