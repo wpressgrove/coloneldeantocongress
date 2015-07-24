@@ -13,7 +13,13 @@
     = f.check_box :has_footer
     = f.label :has_footer, 'Show Footer'
 
+  .field
+    = f.label :body, 'Body'
+    = f.text_area :body, {class: 'tinymce'}
+
   .actions
     = f.submit 'Save', class: 'button tiny'
 
 = link_to 'Back', admin_pages_path
+= tinymce_assets
+= tinymce

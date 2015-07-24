@@ -1,0 +1,17 @@
+.sidebar-item
+  %h5= sidebar_item.name.html_safe
+  = sidebar_item.body.html_safe
+  - if admin
+    = link_to 'Edit', edit_admin_page_sidebar_item_path(page, sidebar_item)
+    - if sidebar_item.rank > 1
+      |
+      = form_for [:admin, page, sidebar_item], remote: true do |f|
+        = f.hidden_field :rank, value: (sidebar_item.rank - 1)
+        = f.submit 'Move Up'
+    - if sidebar_item != page.sidebar_items.last
+      |
+      = form_for [:admin, page, sidebar_item], remote: true do |f|
+        = f.hidden_field :rank, value: (sidebar_item.rank + 1)
+        = f.submit 'Move Down'
+    |
+    = link_to 'Delete', admin_page_sidebar_item_path(page, sidebar_item), data: {confirm: 'Are you sure you want to permanently delete this sidebar item?'}, method: :delete

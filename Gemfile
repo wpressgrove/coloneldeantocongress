@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby "2.2.2"
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.2'
 gem 'pg'
 gem 'mysql'
 gem 'mysql2'
@@ -34,6 +34,8 @@ gem 'aws-sdk', '< 2.0'
 gem 'mini_magick'
 gem 'fastimage'
 gem 'fog'
+
+gem 'tinymce-rails'
 
 gem 'capistrano', '~> 3.0.1'
 gem 'capistrano-rails', '~> 1.1.0'

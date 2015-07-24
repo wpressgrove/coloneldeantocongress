@@ -1,0 +1,6 @@
+menubar: false
+statusbar: false
+toolbar:
+  - bold italic | link | alignleft aligncenter alignright | bullist numlist | undo redo | removeformat
+plugins:
+  - link

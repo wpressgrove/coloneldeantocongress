@@ -25,12 +25,12 @@
   .row
     .columns.small-12
       %ul.main-nav-list
-        %li.active
+        %li{class: "#{(!@page.nil? && @page.slug == 'home')? 'active' : ''}"}
           = link_to root_path, class: 'main-nav-item main-nav' do
             = fa_icon 'home'
-        %li= link_to 'About', root_path, class: 'main-nav-item'
-        %li= link_to 'Dean Family', root_path, class: 'main-nav-item'
+        %li{class: "#{(is_on_controllers_path(['pages']) && !@page.nil? && @page.slug == 'about')? 'active' : ''}"}= link_to 'About', '/pages/about', class: 'main-nav-item'
+        %li{class: "#{(is_on_controllers_path(['pages']) && !@page.nil? && @page.slug == 'dean-family')? 'active' : ''}"}= link_to 'Dean Family', '/pages/dean-family', class: 'main-nav-item'
         %li= link_to 'News / Media', root_path, class: 'main-nav-item'
-        %li= link_to 'Hot Issues', root_path, class: 'main-nav-item'
-        %li= link_to 'Calendar', root_path, class: 'main-nav-item'
+        %li{class: "#{(is_on_controllers_path(['pages']) && !@page.nil? && @page.slug == 'hot-issues')? 'active' : ''}"}= link_to 'Hot Issues', '/pages/hot-issues', class: 'main-nav-item'
+        %li{class: "#{(is_on_controllers_path(['events']))? 'active' : ''}"}= link_to 'Calendar', events_path, class: 'main-nav-item'
         %li= link_to 'DONATE', root_path, class: 'main-nav-item main-nav-donate'
