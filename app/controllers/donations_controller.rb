@@ -19,6 +19,9 @@ class DonationsController < ApplicationController
     @donation.email = params[:stripeEmail]
     @donation.amount = amount
     @donation.save
+
+    flash[:notice] = 'Thank you for your contribution!'
+    redirect_to new_donation_path
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to charges_path

@@ -1,10 +1,55 @@
-#donations-container
+#donations-page
   .row
     .columns.small-12.large-8
-      = form_for Donation.new do |f|
-        = f.text_field :amount, value: '2000'
-        %script.stripe-button.stripe-20-button{"data-amount" => "2000", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
-          :cdata
+      #donations-bubble
+        %h5.support-title Support Colonel Andre Dean
+        %p.help-description Help our grassroots movement of courageous conservatives reignite the promise of America. Show your support for Colonel Andre Dean with a contribution today.
+        .donation-options
+          .row
+            .columns.small-4
+              .donation-option.donate-25-option.active $25
+            .columns.small-4
+              .donation-option.donate-50-option $50
+            .columns.small-4
+              .donation-option.donate-100-option $100
+          .row
+            .columns.small-4
+              .donation-option.donate-250-option $250
+            .columns.small-4
+              .donation-option.donate-500-option $500
+            .columns.small-4
+              .donation-option.donate-1000-option $1000
+          .row
+            .columns.small-4
+              .donation-option.donate-2700-option $2700
+        = form_for Donation.new, html: {class: 'donate-form donate-25-form active'} do |f|
+          = f.text_field :amount, value: '2500'
+          %script.stripe-button.stripe-20-button{"data-amount" => "2500", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
+            :cdata
+        = form_for Donation.new, html: {class: 'donate-form donate-50-form'} do |f|
+          = f.text_field :amount, value: '5000'
+          %script.stripe-button.stripe-20-button{"data-amount" => "5000", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
+            :cdata
+        = form_for Donation.new, html: {class: 'donate-form donate-100-form'} do |f|
+          = f.text_field :amount, value: '10000'
+          %script.stripe-button.stripe-20-button{"data-amount" => "10000", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
+            :cdata
+        = form_for Donation.new, html: {class: 'donate-form donate-250-form'} do |f|
+          = f.text_field :amount, value: '25000'
+          %script.stripe-button.stripe-20-button{"data-amount" => "25000", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
+            :cdata
+        = form_for Donation.new, html: {class: 'donate-form donate-500-form'} do |f|
+          = f.text_field :amount, value: '50000'
+          %script.stripe-button.stripe-20-button{"data-amount" => "50000", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
+            :cdata
+        = form_for Donation.new, html: {class: 'donate-form donate-1000-form'} do |f|
+          = f.text_field :amount, value: '100000'
+          %script.stripe-button.stripe-20-button{"data-amount" => "100000", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
+            :cdata
+        = form_for Donation.new, html: {class: 'donate-form donate-2700-form'} do |f|
+          = f.text_field :amount, value: '270000'
+          %script.stripe-button.stripe-20-button{"data-amount" => "270000", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
+            :cdata
     .columns.small-12.large-4
       = render 'shared/sidebar'
       .sidebar-list
