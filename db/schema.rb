@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725003905) do
+ActiveRecord::Schema.define(version: 20150725033350) do
 
   create_table "donations", force: :cascade do |t|
     t.string   "stripe_token", limit: 255
     t.string   "email",        limit: 255
     t.integer  "amount",       limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "emails", force: :cascade do |t|
+    t.string   "email",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

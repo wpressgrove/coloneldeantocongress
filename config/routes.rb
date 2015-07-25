@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: "pages#index"
+  resources :emails, only: [:create, :destroy]
   resources :pages, only: [:show]
   resources :donations, only: [:new, :create]
   resources :events, only: [:index, :show]

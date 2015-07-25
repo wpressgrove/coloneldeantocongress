@@ -14,6 +14,7 @@ gem 'compass'
 gem 'therubyracer', '0.10.2'
 gem 'font-awesome-rails'
 gem 'money'
+gem 'valid_email'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

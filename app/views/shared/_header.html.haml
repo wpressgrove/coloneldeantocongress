@@ -17,9 +17,10 @@
           %span SIGN UP
           FOR EMAIL UPDATES
         .form
-          = text_field_tag :email, nil, placeholder: 'Email address'
-          = link_to '#' do
-            = fa_icon 'long-arrow-right'
+          = form_for Email.new, remote: true do |f|
+            = f.text_field :email, placeholder: 'Email address'
+            = button_tag do
+              = fa_icon 'long-arrow-right'
 
 #main-nav
   .row
