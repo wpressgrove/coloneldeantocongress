@@ -1,4 +1,4 @@
-#slider{class: "#{(@page.sidebar_items.any?)? '' : 'full-width'}"}
+#slider{class: "#{(@page.sidebar_items.any? || @page.slug == 'home')? '' : 'full-width'}"}
   %ul{"data-orbit" => "", "data-options" => "slide_number:false;resume_on_mouseout:true;timer:true;bullets:false;"}
     - if @page.nil? || @page.slug == 'home'
       %li.active
