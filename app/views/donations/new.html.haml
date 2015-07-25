@@ -1,6 +1,13 @@
-.row
-  .columns.small-12
-    = form_for Donation.new do |f|
-      = f.text_field :amount, value: '2000'
-      %script.stripe-button.stripe-20-button{"data-amount" => "2000", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
-        :cdata
+#donations-container
+  .row
+    .columns.small-12.large-8
+      = form_for Donation.new do |f|
+        = f.text_field :amount, value: '2000'
+        %script.stripe-button.stripe-20-button{"data-amount" => "2000", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
+          :cdata
+    .columns.small-12.large-4
+      = render 'shared/sidebar'
+      .sidebar-list
+        = render 'shared/interview_sidebar_item'
+
+= stylesheet_link_tag 'pages'

@@ -1,6 +1,6 @@
 #slider
   %ul{"data-orbit" => "", "data-options" => "slide_number:false;resume_on_mouseout:true;timer:true;bullets:false;"}
-    - if @page.slug == 'home'
+    - if @page.nil? || @page.slug == 'home'
       %li.active
         = image_tag 'full_banner.jpg'
       %li
