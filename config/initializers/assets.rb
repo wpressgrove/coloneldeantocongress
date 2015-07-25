@@ -2,7 +2,7 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-Rails.application.config.assets.precompile += %w( donations.js admin.js jquery-ui.js timepicker.js donations.css events.css pages.css admin.css jquery-ui.css timepicker.css admin/events.css admin/pages.css admin/users.css )
+Rails.application.config.assets.precompile += %w( donations.js pages.js admin.js jquery-ui.js timepicker.js donations.css events.css pages.css admin.css jquery-ui.css timepicker.css admin/events.css admin/pages.css admin/users.css )
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
