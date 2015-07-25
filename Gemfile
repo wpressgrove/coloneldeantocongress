@@ -50,6 +50,8 @@ gem 'stripe'
 gem 'figaro'
 gem 'launchy'
 
+gem 'google-analytics-rails'
+
 group :production do
   gem 'rails_12factor'
   gem 'unicorn'

@@ -9,8 +9,10 @@
     = stylesheet_link_tag params[:controller]
     = javascript_include_tag 'vendor/modernizr'
     = javascript_include_tag 'application'
+    = javascript_include_tag params[:controller]
     = favicon_link_tag 'logo.png'
     = csrf_meta_tags
+    = analytics_init if Rails.env.production?
   %body
     .flash_messages
       = render 'shared/flash_messages'

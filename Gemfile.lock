@@ -225,6 +225,7 @@ GEM
       sass (>= 3.3.0, < 3.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    google-analytics-rails (0.0.6)
     guard (2.12.6)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -527,6 +528,7 @@ DEPENDENCIES
   fog
   font-awesome-rails
   foundation-rails (~> 5.5.1)
+  google-analytics-rails
   guard-rspec
   haml
   haml-rails
