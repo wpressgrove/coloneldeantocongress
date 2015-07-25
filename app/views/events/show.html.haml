@@ -3,8 +3,8 @@
     .row
       .columns.small-12.large-8
         %h5= @event.title
-        = @event.description
         .event-sub-time #{@event.time.strftime('%B %d %l:%M %p')} at #{@event.location}
+        = @event.description
       .columns.small-12.large-4
         = render 'events/sidebar', event: @event
   #content-container
