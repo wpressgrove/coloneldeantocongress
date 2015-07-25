@@ -18,6 +18,13 @@ $(function(){ $(document).foundation(); });
 
 $(document).ready(function() {
   hide_flash_messages();
+  $('.radio-sidebar-item').click(function() {
+    if($('#interview-audio')[0].paused == false) {
+      $('#interview-audio')[0].pause();
+    } else {
+      $('#interview-audio')[0].play();
+    }
+  });
 });
 
 var hide_flash_messages = function() {
