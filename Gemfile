@@ -30,6 +30,8 @@ gem 'cancancan', '~> 1.10.1'
 gem 'rolify', :git => "git://github.com/EppO/rolify.git"
 gem 'paper_trail', '3.0.6'
 
+gem 'skylight'
+
 gem 'savon', "~> 2.3.0"
 gem 'nokogiri'
 gem 'aws-sdk', '< 2.0'
