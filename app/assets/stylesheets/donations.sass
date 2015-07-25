@@ -1,3 +1,5 @@
+@import "global"
+
 #donations-page
   background: #F2F4F9
   padding-bottom: 25px
@@ -21,6 +23,24 @@
     p.help-description
       font-size: 12px
       color: #888
+      margin-bottom: 50px
+
+    .payment-type-options
+      .payment-type-option
+        padding: 5px
+        text-align: center
+        font-size: 23px
+        line-height: 40px
+        background: #888
+        border-radius: 15px
+        color: #FFF
+
+        i
+          font-size: 30px
+          color: #FFF
+
+        &.active
+          background: #274472
 
     .donation-options
       margin-top: 75px
@@ -55,5 +75,41 @@
       &.active
         display: block
 
+    .donation-forms
+      display: none
+
+      &.active
+        display: block
+
+        &.check-donation-forms
+          margin-top: 75px
+          text-align: center
+
+        &.credit-card-donation-forms
+          button
+            background: #63B2F5 !important
+            background-image: none
+
+            span
+              background: none !important
+
+        &.paypal-donation-forms
+          form
+            display: block
+
+            input[type="submit"]
+              width: 100%
+              color: #FFF
+              border: none
+              border-radius: 5px
+              padding: 8px
+              font-size: 14px
+              background: #63B2F5 !important
+
   .sidebar-donation-item
     display: none
+
+@media #{$medium-down}
+  .payment-type-options
+    .payment-type-option
+      font-size: 14px !important

@@ -16,9 +16,26 @@ $(document).ready(function() {
       donate(2700);
     }
   });
+
+  $(".payment-type-option").click(function() {
+    if($(this).hasClass('paypal-option')) {
+      $('.payment-type-option, .donation-forms').removeClass('active');
+      $('.paypal-option, .paypal-donation-forms').addClass('active');
+      $('.donation-options').show();
+    } else if($(this).hasClass('credit-card-option')) {
+      $('.payment-type-option, .donation-forms').removeClass('active');
+      $('.credit-card-option, .credit-card-donation-forms').addClass('active');
+      $('.donation-options').show();
+    } else if($(this).hasClass('check-option')) {
+      $('.payment-type-option, .donation-forms').removeClass('active');
+      $('.check-option, .check-donation-forms').addClass('active');
+      $('.donation-options').hide();
+    }
+  });
 });
 
 var donate = function(amount) {
   $('.donation-option, .donate-form').removeClass('active');
   $('.donate-' + amount + '-option, .donate-' + amount + '-form').addClass('active');
+  $('#sd_paypalform #paypal_amount').val('$' + amount);
 };
