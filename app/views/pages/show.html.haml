@@ -16,7 +16,7 @@
 - else
   .row
     .columns.small-12{class: "#{(@page.sidebar_items.any?)? 'large-8' : 'large-12'}"}
-      - if @page.slug == 'about'
+      - if ['about', 'dean-family'].include?(@page.slug)
         .row
           .columns.small-12= render 'shared/slider'
       = @page.body.html_safe

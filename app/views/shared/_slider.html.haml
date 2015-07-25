@@ -1,4 +1,4 @@
-#slider
+#slider{class: "#{(@page.sidebar_items.any?)? '' : 'full-width'}"}
   %ul{"data-orbit" => "", "data-options" => "slide_number:false;resume_on_mouseout:true;timer:true;bullets:false;"}
     - if @page.nil? || @page.slug == 'home'
       %li.active
@@ -19,3 +19,16 @@
       %li
         = image_tag 'family.jpg'
         .orbit-caption Dean Family, April 2015.
+    - elsif @page.slug == 'dean-family'
+      %li
+        = image_tag 'vote_for_grandpa.jpg'
+        .orbit-caption Grandchilden Beckham and Gibson at Woodlands parade.
+      %li
+        = image_tag 'family.jpg'
+        .orbit-caption Dean Family, April 2015.
+      %li
+        = image_tag 'family_with_grandkids.jpg'
+        .orbit-caption Colonel Dean and Dianne with children and grandchildren Gibson and Beckham.
+      %li.active
+        = image_tag 'dianne.jpg'
+        .orbit-caption Colonel Dean and his wife Dianne.
