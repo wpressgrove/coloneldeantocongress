@@ -1,0 +1,6 @@
+.row
+  .columns.small-12
+    = form_for Donation.new do |f|
+      = f.text_field :amount, value: '2000'
+      %script.stripe-button.stripe-20-button{"data-amount" => "2000", "data-description" => "Donations to ColonelDeanToCongress", "data-image" => image_url('logo.png'), "data-key" => "#{ENV['STRIPE_PUBLIC_KEY']}", "data-name" => "Colonel Dean to Congress", :src => "https://checkout.stripe.com/checkout.js"}
+        :cdata

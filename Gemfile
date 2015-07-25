@@ -13,6 +13,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'compass'
 gem 'therubyracer', '0.10.2'
 gem 'font-awesome-rails'
+gem 'money'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -42,6 +43,8 @@ gem 'capistrano-rails', '~> 1.1.0'
 gem 'capistrano-rvm', '~> 0.1.0'
 gem 'capistrano-bundler', '>= 1.1.1'
 gem 'rvm1-capistrano3', require: false
+
+gem 'stripe'
 
 gem 'figaro'
 gem 'launchy'
@@ -73,4 +76,5 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'letter_opener'
+  gem 'quiet_assets'
 end

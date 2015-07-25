@@ -1,0 +1,21 @@
+.donations-page
+  .row
+    .column.large-3
+      &nbsp
+    .column.large-6
+      %h1 Donations
+    .column.large-3
+      &nbsp
+  %table
+    %thead
+      %tr
+        %th Email
+        %th Amount
+        %th Time
+        
+    %tbody
+      - @donations.each do |donation|
+        %tr
+          %td= donation.email
+          %td= Money.new(donation.amount, "USD").format
+          %td= (donation.created_at.in_time_zone(ActiveSupport::TimeZone.new("Central Time (US & Canada)")).strftime('%b %d %I:%M %p') rescue '')
