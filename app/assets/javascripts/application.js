@@ -21,7 +21,7 @@ $(document).ready(function() {
 });
 
 var hide_flash_messages = function() {
-  if($(".flash_messages").length) {
+  if($(".flash_messages").length && $(".flash_messages").html() != '') {
     $(".flash_messages").delay(3000).fadeOut(200);
   }
 };
