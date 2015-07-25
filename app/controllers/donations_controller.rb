@@ -24,6 +24,6 @@ class DonationsController < ApplicationController
     redirect_to new_donation_path
   rescue Stripe::CardError => e
     flash[:alert] = e.message
-    redirect_to charges_path
+    redirect_to new_donation_path
   end
 end
