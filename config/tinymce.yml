@@ -1,5 +1,6 @@
 menubar: false
 statusbar: false
+height: 500
 toolbar:
   - bold italic | link | alignleft aligncenter alignright | bullist numlist | undo redo | removeformat
 plugins:
