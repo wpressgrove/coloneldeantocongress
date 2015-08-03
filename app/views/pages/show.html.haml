@@ -21,6 +21,8 @@
           .columns.small-12= render 'shared/slider'
       - else
         .no-slider-padding
+      - if @page.title.present?
+        %h5.page-title= @page.title.html_safe
       = @page.body.html_safe
     - if @page.sidebar_items.any?
       .columns.small-12.large-4

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725033350) do
+ActiveRecord::Schema.define(version: 20150803034405) do
 
   create_table "donations", force: :cascade do |t|
     t.string   "stripe_token", limit: 255
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150725033350) do
     t.boolean  "required",   limit: 1,     default: false
     t.string   "slug",       limit: 255
     t.text     "body",       limit: 65535
+    t.string   "title",      limit: 255
   end
 
   add_index "pages", ["name"], name: "index_pages_on_name", using: :btree

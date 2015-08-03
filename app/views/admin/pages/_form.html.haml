@@ -7,6 +7,9 @@
     = render 'shared/field', f: f, field_type: 'text_field', object: @page, duplicate: nil, field: 'name'
 
   .field
+    = render 'shared/field', f: f, field_type: 'text_field', object: @page, duplicate: nil, field: 'title'
+
+  .field
     = f.check_box :has_header
     = f.label :has_header, 'Show Header'
   .field
