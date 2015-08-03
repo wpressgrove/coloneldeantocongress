@@ -1,0 +1,38 @@
+.nav-tabs-page
+  .row
+    .column.large-3
+      &nbsp
+    .column.large-6
+      %h1 Nav Tabs
+    .column.large-3.new-nav-tab
+      - if can?(:create, NavTab) && Page.available_pages(0).any?
+        = link_to new_admin_nav_tab_path do
+          = fa_icon "plus"
+          New Tab
+  %table
+    %thead
+      %tr
+        %th Label
+        %th Move Left
+        %th Move Right
+        %th Edit
+        %th Delete
+
+    %tbody
+      - @nav_tabs.each do |nav_tab|
+        %tr
+          %td= nav_tab.label
+          %td.move-left
+            - if nav_tab != NavTab.all.first
+              = form_for [:admin, nav_tab] do |f|
+                = f.hidden_field :rank, value: (nav_tab.rank - 1)
+                = f.submit 'Move Left'
+          %td.move-right
+            - if nav_tab != NavTab.all.last
+              = form_for [:admin, nav_tab] do |f|
+                = f.hidden_field :rank, value: (nav_tab.rank + 1)
+                = f.submit 'Move Right'
+          - if can? :update, nav_tab
+            %td= link_to 'Edit', edit_admin_nav_tab_path(nav_tab)
+          - if can? :destroy, nav_tab
+            %td= link_to 'Delete', [:admin, nav_tab], :method => :delete, :data => { :confirm => 'Are you sure?' }

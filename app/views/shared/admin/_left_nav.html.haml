@@ -3,20 +3,38 @@
     - if can? :create, Page
       %li{class: (is_on_controllers_path(['admin/pages']))? 'active' : 'pages-nav'}
         = link_to admin_pages_path do
-          .nav-menu-title 
+          .nav-menu-title
             = fa_icon "file"
             Pages
         %ul.sub-nav-menu
           %li{class: (is_on_controllers_path(['admin/pages']) && params[:action] == 'new')? 'active' : ''}
             = link_to new_admin_page_path do
-              .sub-nav-menu-title 
+              .sub-nav-menu-title
                 = fa_icon "plus"
                 New Page
           %li{class: (is_on_controllers_path(['admin/pages']) && params[:action] != 'new')? 'active' : ''}
             = link_to admin_pages_path do
-              .sub-nav-menu-title 
+              .sub-nav-menu-title
                 = fa_icon "files-o"
                 Manage Pages
+  %ul.nav-menu
+    - if can? :create, NavTab
+      %li{class: (is_on_controllers_path(['admin/nav_tabs']))? 'active' : 'nav-tabs-nav'}
+        = link_to admin_nav_tabs_path do
+          .nav-menu-title
+            = fa_icon "bars"
+            Nav Tabs
+        %ul.sub-nav-menu
+          %li{class: (is_on_controllers_path(['admin/nav_tabs']) && params[:action] == 'new')? 'active' : ''}
+            = link_to new_admin_nav_tab_path do
+              .sub-nav-menu-title
+                = fa_icon "plus"
+                New Nav Tab
+          %li{class: (is_on_controllers_path(['admin/nav_tabs']) && params[:action] != 'new')? 'active' : ''}
+            = link_to admin_nav_tabs_path do
+              .sub-nav-menu-title
+                = fa_icon "bars"
+                Manage Nav Tabs
   %ul.nav-menu
     - if can? :create, Event
       %li{class: (is_on_controllers_path(['admin/events']))? 'active' : 'events-nav'}

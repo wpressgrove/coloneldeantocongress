@@ -16,7 +16,6 @@ class Admin::SidebarItemsController < AdminController
     sidebar_item = @page.sidebar_items.find_by_rank(params[:sidebar_item][:rank]) rescue nil
     sidebar_item_original_rank = @sidebar_item.rank
     sidebar_item.update_column(:rank, 99) unless sidebar_item.nil?
-    @sidebar_item.rank
     if @sidebar_item.update_attributes(sidebar_item_params)
       sidebar_item.update_column(:rank, sidebar_item_original_rank) unless sidebar_item.nil?
       respond_to do |format|

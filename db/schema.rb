@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803034405) do
+ActiveRecord::Schema.define(version: 20150803035909) do
 
   create_table "donations", force: :cascade do |t|
     t.string   "stripe_token", limit: 255
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(version: 20150803034405) do
   add_index "events", ["slug"], name: "index_events_on_slug", using: :btree
   add_index "events", ["time"], name: "index_events_on_time", using: :btree
   add_index "events", ["title"], name: "index_events_on_title", using: :btree
+
+  create_table "nav_tabs", force: :cascade do |t|
+    t.integer  "page_id",    limit: 4
+    t.string   "label",      limit: 255
+    t.integer  "rank",       limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "nav_tabs", ["label"], name: "index_nav_tabs_on_label", using: :btree
+  add_index "nav_tabs", ["page_id"], name: "index_nav_tabs_on_page_id", using: :btree
+  add_index "nav_tabs", ["rank"], name: "index_nav_tabs_on_rank", using: :btree
 
   create_table "pages", force: :cascade do |t|
     t.string   "name",       limit: 255

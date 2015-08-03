@@ -1,0 +1,12 @@
+= form_for [:admin, @nav_tab] do |f|
+  = render 'shared/form_error_messages', object: @nav_tab, name: 'Nav Item'
+
+  = render 'shared/field', f: f, field_type: 'text_field', object: @nav_tab, duplicate: nil, field: 'label'
+  .field
+    = f.label :page_id, 'Page'
+    = f.collection_select :page_id, Page.available_pages(@nav_tab.page_id), :id, :name
+
+  .actions
+    = f.submit 'Save', class: 'button tiny'
+
+= link_to 'Back', admin_nav_tabs_path

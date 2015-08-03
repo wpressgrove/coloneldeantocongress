@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :manage, [Donation, Email, Event, Page, SidebarItem, User]
+    can :manage, [Donation, Email, Event, NavTab, Page, SidebarItem, User]
     cannot :destroy, User, email: user.email
     cannot :destroy, Page, required: true
   end

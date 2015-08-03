@@ -29,9 +29,7 @@
         %li{class: "#{(!@page.nil? && @page.slug == 'home')? 'active' : ''}"}
           = link_to root_path, class: 'main-nav-item main-nav' do
             = fa_icon 'home'
-        %li{class: "#{(is_on_controllers_path(['pages']) && !@page.nil? && @page.slug == 'about')? 'active' : ''}"}= link_to 'About', '/pages/about', class: 'main-nav-item'
-        %li{class: "#{(is_on_controllers_path(['pages']) && !@page.nil? && @page.slug == 'dean-family')? 'active' : ''}"}= link_to 'Dean Family', '/pages/dean-family', class: 'main-nav-item'
-        //%li= link_to 'News / Media', root_path, class: 'main-nav-item'
-        //%li{class: "#{(is_on_controllers_path(['pages']) && !@page.nil? && @page.slug == 'hot-issues')? 'active' : ''}"}= link_to 'Hot Issues', '/pages/hot-issues', class: 'main-nav-item'
+        - NavTab.all.each do |nav_tab|
+          %li{class: "#{(is_on_controllers_path(['pages']) && !@page.nil? && nav_tab.page.slug == @page.slug)? 'active' : ''}"}= link_to nav_tab.label, page_path(nav_tab.page.slug), class: 'main-nav-item'
         %li{class: "#{(is_on_controllers_path(['events']))? 'active' : ''}"}= link_to 'Calendar', events_path, class: 'main-nav-item'
         %li{class: "#{(is_on_controllers_path(['donations']))? 'active' : ''}"}= link_to 'Donations', new_donation_path, class: 'main-nav-item'
