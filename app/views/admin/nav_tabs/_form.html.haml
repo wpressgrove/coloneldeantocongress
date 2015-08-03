@@ -4,7 +4,10 @@
   = render 'shared/field', f: f, field_type: 'text_field', object: @nav_tab, duplicate: nil, field: 'label'
   .field
     = f.label :page_id, 'Page'
-    = f.collection_select :page_id, Page.available_pages(@nav_tab.page_id), :id, :name
+    - if @nav_tab.page_id.present?
+      = f.collection_select :page_id, Page.available_pages(@nav_tab.page_id), :id, :name
+    - else
+      = f.collection_select :page_id, Page.available_pages(0), :id, :name
 
   .actions
     = f.submit 'Save', class: 'button tiny'
