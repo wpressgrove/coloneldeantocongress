@@ -36,7 +36,14 @@
                 = fa_icon "calendar"
                 Manage Events
   %ul.nav-menu
-    - if can? :create, Donation
+    - if can? :read, Email
+      %li{class: (is_on_controllers_path(['admin/emails']))? 'active' : 'emails-nav'}
+        = link_to admin_emails_path do
+          .nav-menu-title
+            = fa_icon "envelope"
+            Emails
+  %ul.nav-menu
+    - if can? :read, Donation
       %li{class: (is_on_controllers_path(['admin/donations']))? 'active' : 'donations-nav'}
         = link_to admin_donations_path do
           .nav-menu-title

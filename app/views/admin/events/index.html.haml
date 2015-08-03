@@ -24,7 +24,7 @@
       - @events.each do |event|
         %tr
           %td= event.title
-          %td= (event.time.in_time_zone(ActiveSupport::TimeZone.new("Central Time (US & Canada)")).strftime('%b %d %I:%M %p') rescue '')
+          %td= (event.time.strftime('%b %d %I:%M %p') rescue '')
           - if can? :update, event
             %td= link_to 'Edit', edit_admin_event_path(event)
           - if can? :destroy, event

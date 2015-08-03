@@ -1,0 +1,20 @@
+.emails-page
+  .row
+    .column.large-3
+      &nbsp
+    .column.large-6
+      %h1 Emails
+    .column.large-3.download-csv
+      = link_to '/admin/emails.csv' do
+        = fa_icon "download"
+        Download CSV
+  %table
+    %thead
+      %tr
+        %th Email
+        %th Time Submitted
+    %tbody
+      - @emails.each do |email|
+        %tr
+          %td= email.email
+          %td= email.created_at.strftime('%b %d %I:%M %p') rescue ''
