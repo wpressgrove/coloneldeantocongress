@@ -27,5 +27,6 @@
         .sidebar-list.custom-sidebar
           - @page.sidebar_items.each do |sidebar_item|
             = render 'sidebar_items/item', page: @page, sidebar_item: sidebar_item, admin: false
+  .no-slider-padding
 - if @page.has_footer
   = render 'shared/footer'
