@@ -18,6 +18,24 @@
                 = fa_icon "files-o"
                 Manage Pages
   %ul.nav-menu
+    - if can? :create, Medium
+      %li{class: (is_on_controllers_path(['admin/media', 'admin/images']))? 'active' : 'media-nav'}
+        = link_to admin_images_path do
+          .nav-menu-title
+            = fa_icon "picture-o"
+            Media
+        %ul.sub-nav-menu
+          %li{class: (is_on_controllers_path(['admin/media', 'admin/images']) && params[:action] == 'new')? 'active' : ''}
+            = link_to new_admin_image_path do
+              .sub-nav-menu-title
+                = fa_icon "plus"
+                New Image
+          %li{class: (is_on_controllers_path(['admin/media', 'admin/images']) && params[:action] != 'new')? 'active' : ''}
+            = link_to admin_images_path do
+              .sub-nav-menu-title
+                = fa_icon "picturoe-o"
+                Manage Images
+  %ul.nav-menu
     - if can? :create, NavTab
       %li{class: (is_on_controllers_path(['admin/nav_tabs']))? 'active' : 'nav-tabs-nav'}
         = link_to admin_nav_tabs_path do
