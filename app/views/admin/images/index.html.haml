@@ -16,7 +16,6 @@
         %th Title
         %th Preview
         %th Edit
-        %th Delete
 
     %tbody
       - @images.each do |image|
@@ -25,5 +24,3 @@
           %td= image_tag image.file.url(:small)
           - if can? :update, image
             %td= link_to 'Edit', edit_admin_image_path(image)
-          - if can? :destroy, image
-            %td= link_to 'Delete', [:admin, image], :method => :delete, :data => { :confirm => 'Are you sure?' }
