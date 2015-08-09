@@ -15,6 +15,14 @@ class Admin::ImagesController < AdminController
     end
   end
 
+  def update
+    if @image.update_attributes(image_params)
+      redirect_to admin_images_path
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def image_params
