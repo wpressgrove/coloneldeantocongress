@@ -6,6 +6,14 @@
 
 # Ignore bundler config.
 /.bundle
+/file_store/*
+/system/*
+/public/system/*
+!/file_store/.keep
+/public/file_store/*
+!/public/file_store/.keep
+/public/robots.txt
+/public/assets/*
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

@@ -3,8 +3,12 @@ statusbar: false
 height: 500
 fontsize_formats: "10px 12px 14px 16px 24px"
 theme_advanced_fonts: "Cinzel, serif;Open Sans;"
+image_list: "/admin/images.json"
+image_dimensions: false
+object_resizing : false
 toolbar:
-  - bold italic forecolor backcolor fontsizeselect | link | alignleft aligncenter alignright | bullist numlist | undo redo | removeformat
+  - bold italic forecolor backcolor fontselect fontsizeselect | image link | alignleft aligncenter alignright | bullist numlist | undo redo | removeformat
 plugins:
   - link
   - textcolor
+  - image

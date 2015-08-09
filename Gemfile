@@ -38,6 +38,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'mini_magick'
 gem 'fastimage'
 gem 'fog'
+gem 'paperclip'
 
 gem 'tinymce-rails'
 

@@ -1,0 +1,29 @@
+.media-page
+  .row
+    .column.large-3
+      &nbsp
+    .column.large-6
+      %h1 Images
+    .column.large-3.new-image
+      - if can? :create, Image
+        = link_to new_admin_image_path do
+          = fa_icon "plus"
+          %br
+          New Image
+  %table
+    %thead
+      %tr
+        %th Title
+        %th Preview
+        %th Edit
+        %th Delete
+
+    %tbody
+      - @images.each do |image|
+        %tr
+          %td= image.title
+          %td= image_tag image.file.url(:small)
+          - if can? :update, image
+            %td= link_to 'Edit', edit_admin_image_path(image)
+          - if can? :destroy, image
+            %td= link_to 'Delete', [:admin, image], :method => :delete, :data => { :confirm => 'Are you sure?' }

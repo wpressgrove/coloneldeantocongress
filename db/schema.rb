@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803035909) do
+ActiveRecord::Schema.define(version: 20150809215044) do
 
   create_table "donations", force: :cascade do |t|
     t.string   "stripe_token", limit: 255
@@ -40,6 +40,20 @@ ActiveRecord::Schema.define(version: 20150803035909) do
   add_index "events", ["slug"], name: "index_events_on_slug", using: :btree
   add_index "events", ["time"], name: "index_events_on_time", using: :btree
   add_index "events", ["title"], name: "index_events_on_title", using: :btree
+
+  create_table "media", force: :cascade do |t|
+    t.string   "title",             limit: 255
+    t.string   "type",              limit: 255
+    t.string   "file_file_name",    limit: 255
+    t.string   "file_content_type", limit: 255
+    t.integer  "file_file_size",    limit: 4
+    t.datetime "file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "media", ["title"], name: "index_media_on_title", using: :btree
+  add_index "media", ["type"], name: "index_media_on_type", using: :btree
 
   create_table "nav_tabs", force: :cascade do |t|
     t.integer  "page_id",    limit: 4

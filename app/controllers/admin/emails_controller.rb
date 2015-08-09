@@ -1,4 +1,6 @@
 class Admin::EmailsController < AdminController
+  load_and_authorize_resource
+
   def index
     @emails = Email.all
     respond_to do |format|

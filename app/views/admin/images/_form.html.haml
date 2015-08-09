@@ -1,0 +1,14 @@
+= form_for [:admin, @image] do |f|
+  = render 'shared/form_error_messages', object: @image, name: 'Image'
+
+  = render 'shared/field', f: f, field_type: 'text_field', object: @image, duplicate: nil, field: 'title'
+  .field
+    = label 'Image File', 'Image File'
+    - if @image.file.present?
+      = image_tag @image.file.url(:small)
+    = f.file_field :file
+
+  .actions
+    = f.submit 'Save', class: 'button tiny'
+
+= link_to 'Back', admin_images_path
