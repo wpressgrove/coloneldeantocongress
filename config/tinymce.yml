@@ -2,15 +2,16 @@ menubar: false
 statusbar: false
 height: 500
 fontsize_formats: "10px 12px 14px 16px 24px"
-theme_advanced_fonts: "Cinzel, serif;Open Sans;"
+style_formats: [{title: 'Open Sans', inline: 'span', styles: { 'font-family': "'Open Sans', 'Segoe UI', Arial, sans-serif"}}, {title: 'Cinzel', inline: 'span', styles: { 'font-family': 'Cinzel, serif'}}]
 image_list: "/admin/images.json"
 image_dimensions: false
 image_source: false
 image_description: false
 object_resizing : false
 toolbar:
-  - bold italic forecolor fontselect fontsizeselect | image link | alignleft aligncenter alignright | bullist numlist | undo redo | removeformat
+  - bold italic forecolor styleselect fontsizeselect | image link | alignleft aligncenter alignright | bullist numlist | undo redo | removeformat
 plugins:
   - link
   - textcolor
+  - advlist
   - image
