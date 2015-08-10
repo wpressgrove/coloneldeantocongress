@@ -7,7 +7,8 @@ image_list: "/admin/images.json"
 image_dimensions: false
 image_source: false
 image_description: false
-object_resizing : false
+object_resizing: false
+pasteAsPlainText: true
 toolbar:
   - bold italic forecolor styleselect fontsizeselect | image link | alignleft aligncenter alignright | bullist numlist | undo redo | removeformat
 plugins:
@@ -15,3 +16,4 @@ plugins:
   - textcolor
   - advlist
   - image
+  - paste
