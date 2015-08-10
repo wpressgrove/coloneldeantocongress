@@ -5,4 +5,6 @@ class Image < Medium
   validates :file_content_type, presence: true
   validates :file_file_size, presence: true
   validates :file_updated_at, presence: true
+
+  default_scope { order("title ASC") }
 end
