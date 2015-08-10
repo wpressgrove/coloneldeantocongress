@@ -9,7 +9,7 @@ image_source: false
 image_description: false
 object_resizing : false
 toolbar:
-  - bold italic forecolor backcolor fontselect fontsizeselect | image link | alignleft aligncenter alignright | bullist numlist | undo redo | removeformat
+  - bold italic forecolor fontselect fontsizeselect | image link | alignleft aligncenter alignright | bullist numlist | undo redo | removeformat
 plugins:
   - link
   - textcolor
