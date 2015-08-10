@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809215044) do
+ActiveRecord::Schema.define(version: 20150809235217) do
 
   create_table "donations", force: :cascade do |t|
     t.string   "stripe_token", limit: 255
@@ -102,6 +102,19 @@ ActiveRecord::Schema.define(version: 20150809215044) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "slideshow_items", force: :cascade do |t|
+    t.integer  "page_id",    limit: 4
+    t.integer  "image_id",   limit: 4
+    t.integer  "rank",       limit: 4
+    t.string   "subtitle",   limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "slideshow_items", ["image_id"], name: "index_slideshow_items_on_image_id", using: :btree
+  add_index "slideshow_items", ["page_id"], name: "index_slideshow_items_on_page_id", using: :btree
+  add_index "slideshow_items", ["rank"], name: "index_slideshow_items_on_rank", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,             null: false

@@ -1,34 +1,8 @@
 #slider{class: "#{(@page.sidebar_items.any? || @page.slug == 'home')? '' : 'full-width'}"}
-  %ul{"data-orbit" => "", "data-options" => "slide_number:false;resume_on_mouseout:true;timer:true;bullets:false;"}
-    - if @page.nil? || @page.slug == 'home'
-      %li.active
-        = image_tag 'full_banner.jpg'
-      %li
-        = image_tag 'ted_cruz_short.jpg'
-        .orbit-caption Lt. Colonel Dean and Senator Ted Cruz, March 2015.
-      %li
-        = image_tag 'family.jpg'
-        .orbit-caption 2012 at Fort Knox.
-    - elsif @page.slug == 'about'
-      %li.active
-        = image_tag 'dianne.jpg'
-        .orbit-caption Colonel Dean and his wife Dianne.
-      %li
-        = image_tag 'ted_cruz_short.jpg'
-        .orbit-caption Colonel Dean and Senator Ted Cruz, March 2015. I stand with Ted Cruz.
-      %li
-        = image_tag 'family.jpg'
-        .orbit-caption 2012 at Fort Knox.
-    - elsif @page.slug == 'dean-family'
-      %li
-        = image_tag 'vote_for_grandpa.jpg'
-        .orbit-caption Grandchilden Beckham and Gibson at Woodlands parade.
-      %li
-        = image_tag 'family.jpg'
-        .orbit-caption 2012 at Fort Knox.
-      %li
-        = image_tag 'family_with_grandkids.jpg'
-        .orbit-caption Colonel Dean and Dianne with children and grandchildren Gibson and Beckham.
-      %li.active
-        = image_tag 'dianne.jpg'
-        .orbit-caption Colonel Dean and his wife Dianne.
+  - if @page.slideshow_items.any?
+    %ul{"data-orbit" => "", "data-options" => "slide_number:false;resume_on_mouseout:true;timer:true;bullets:false;"}
+      - @page.slideshow_items.each do |slideshow_item|
+        %li
+          = image_tag slideshow_item.image.file.url(:large)
+          - if slideshow_item.subtitle.present?
+            .orbit-caption= slideshow_item.subtitle

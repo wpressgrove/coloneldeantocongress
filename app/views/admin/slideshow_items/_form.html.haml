@@ -1,0 +1,13 @@
+= form_for [:admin, @page, @slideshow_item] do |f|
+  = render 'shared/form_error_messages', object: @slideshow_item, name: 'Slideshow Item'
+
+  .field
+    = render 'shared/field', f: f, field_type: 'text_field', object: @slideshow_item, duplicate: nil, field: 'subtitle'
+
+  .field
+    = collection_select(:slideshow_item, :image_id, Image.all, :id, :title)
+
+  .actions
+    = f.submit 'Save', class: 'button tiny'
+
+= link_to 'Back', admin_page_slideshow_items_path(@page)

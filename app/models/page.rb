@@ -2,6 +2,7 @@ class Page < ActiveRecord::Base
   has_paper_trail
 
   has_many :sidebar_items
+  has_many :slideshow_items
   has_many :nav_tabs
 
   validates :name, uniqueness: true, presence: true

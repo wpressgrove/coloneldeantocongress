@@ -16,6 +16,7 @@
     %thead
       %tr
         %th Name
+        %th Slideshow
         %th Edit
         %th Delete
 
@@ -23,6 +24,8 @@
       - @pages.each do |page|
         %tr
           %td= page.name
+          - if can? :create, SlideshowItem
+            %td= link_to 'Manage Slideshow', admin_page_slideshow_items_path(page)
           - if can? :update, page
             %td= link_to 'Edit', edit_admin_page_path(page)
           - if can? :destroy, page

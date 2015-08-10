@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :nav_tabs, only: [:index, :new, :edit, :create, :update, :destroy]
     resources :pages, only: [:index, :new, :edit, :create, :update, :destroy] do
       resources :sidebar_items, only: [:new, :edit, :create, :update, :destroy]
+      resources :slideshow_items, only: [:index, :new, :edit, :create, :update, :destroy]
     end
     resources :emails, only: [:index]
     resources :users, only: [:index, :new, :edit, :create, :update, :destroy]

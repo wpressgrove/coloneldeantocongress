@@ -1,0 +1,47 @@
+.pages-page
+  .row
+    .column.large-3
+      &nbsp
+    .column.large-6
+      %h1 Page #{@page.name} Slideshow Items
+    .column.large-3.new-page
+      - if can? :create, SlideshowItem
+        = link_to new_admin_page_slideshow_item_path(@page) do
+          = fa_icon "plus"
+          %br
+          New Page Slideshow Item
+
+  .row
+    .column.large-12
+      = render 'shared/slider'
+  %table
+    %thead
+      %tr
+        %th Image
+        %th Subtitle
+        %th Move Up
+        %th Move Down
+        %th Edit
+        %th Delete
+
+    %tbody
+      - @slideshow_items.each do |slideshow_item|
+        %tr
+          %td= image_tag slideshow_item.image.file.url(:thumb)
+          %td= slideshow_item.subtitle
+          %td
+            - if can?(:update, slideshow_item) && slideshow_item.rank > 1
+              = form_for [:admin, @page, slideshow_item] do |f|
+                = f.hidden_field :rank, value: (slideshow_item.rank - 1)
+                = f.submit 'Move Up'
+          %td
+            - if can?(:update, slideshow_item) && slideshow_item != @page.slideshow_items.last
+              = form_for [:admin, @page, slideshow_item] do |f|
+                = f.hidden_field :rank, value: (slideshow_item.rank + 1)
+                = f.submit 'Move Down'
+          %td
+            - if can? :update, slideshow_item
+              = link_to 'Edit', edit_admin_page_slideshow_item_path(@page, slideshow_item)
+          %td
+            - if can? :destroy, slideshow_item
+              = link_to 'Delete', [:admin, @page, slideshow_item], :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -9,3 +9,10 @@
 
   .sidebar-list-container
     = render 'admin/sidebar_items/list', page: @page
+
+
+  - if can? :create, SlideshowItem
+    %td= link_to 'Manage Slideshow', admin_page_slideshow_items_path(@page)
+  .row
+    .column.large-12
+      = render 'shared/slider'
