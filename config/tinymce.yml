@@ -3,6 +3,7 @@ statusbar: false
 height: 500
 fontsize_formats: "10px 12px 14px 16px 24px"
 style_formats: [{title: 'Open Sans', inline: 'span', styles: { 'font-family': "'Open Sans', 'Segoe UI', Arial, sans-serif"}}, {title: 'Cinzel', inline: 'span', styles: { 'font-family': 'Cinzel, serif'}}]
+textcolor_map: ["000000", "Black", "3D474C", "Gray", "264274", "Dark Blue", "5FB0F8", "Light Blue", "AB2203", "Red"]
 image_list: "/admin/images.json"
 image_dimensions: false
 image_source: false
