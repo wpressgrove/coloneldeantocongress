@@ -309,8 +309,6 @@ GEM
       i18n (>= 0.6.4, <= 0.7.0)
     mono_logger (1.1.0)
     multi_json (1.11.1)
-    mysql (2.9.1)
-    mysql2 (0.3.18)
     nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -553,8 +551,6 @@ DEPENDENCIES
   mini_magick
   mocha
   money
-  mysql
-  mysql2
   nokogiri
   paper_trail (= 3.0.6)
   paperclip
@@ -584,4 +580,4 @@ DEPENDENCIES
   will_paginate (~> 3.0.6)
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

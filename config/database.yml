@@ -1,19 +1,19 @@
 default: &default
-  adapter: <%= ENV['DATABASE_ADAPTER'] %>
-  encoding: <%= ENV['DATABASE_ENCODING'] %>
-  pool: <%= ENV['DATABASE_POOL'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  adapter: 'postgresql'
+  encoding: 'unicode'
+  pool: 5
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  username: <%= ENV['DATABASE_USERNAME'] || '' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || '' %>
 
 development:
   <<: *default
-  database: <%= ENV['DATABASE_PRODUCTION'] %>
+  database: <%= ENV['DATABASE_PRODUCTION'] || 'congress' %>
 
 test:
   <<: *default
-  database: <%= ENV['DATABASE_TEST'] %>
+  database: <%= ENV['DATABASE_TEST'] || 'congress_test' %>
 
 production:
   <<: *default
-  database: <%= ENV['DATABASE_PRODUCTION'] %>
+  database: <%= ENV['DATABASE_PRODUCTION'] || 'congress' %>

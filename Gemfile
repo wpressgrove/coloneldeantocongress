@@ -3,8 +3,6 @@ ruby "2.2.2"
 
 gem 'rails', '4.2.2'
 gem 'pg'
-gem 'mysql'
-gem 'mysql2'
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -50,7 +48,6 @@ gem 'rvm1-capistrano3', require: false
 
 gem 'stripe'
 
-gem 'figaro'
 gem 'launchy'
 
 gem 'google-analytics-rails'
@@ -83,4 +80,8 @@ group :development do
   gem 'meta_request'
   gem 'letter_opener'
   gem 'quiet_assets'
+end
+
+group :development, :production do
+  gem 'figaro'
 end
