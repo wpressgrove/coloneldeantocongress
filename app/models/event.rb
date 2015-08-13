@@ -7,7 +7,12 @@ class Event < ActiveRecord::Base
 
   before_save :set_slug
 
-  scope :next_event, -> (index) { Event.where("time >= ?", Time.now.beginning_of_day).order("time ASC")[index] }
+  scope :future_events, -> { Event.where("time >= ?", Time.now.beginning_of_day).order("time ASC") }
+
+  def self.next_event(index)
+    future_events = self.future_events
+    self.future_events[index]
+  end
 
   def set_slug
     self.slug = self.title.parameterize
