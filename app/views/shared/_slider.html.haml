@@ -1,6 +1,6 @@
 #slider{class: "#{(@page.sidebar_items.any? || @page.slug == 'home')? '' : 'full-width'}"}
   - if @page.slideshow_items.any?
-    %ul{"data-orbit" => "", "data-options" => "slide_number:false;resume_on_mouseout:true;timer:true;bullets:false;"}
+    %ul{"data-orbit" => "", "data-options" => "fluid:true;variable_height:true;slide_number:false;resume_on_mouseout:true;timer:true;bullets:false;"}
       - @page.slideshow_items.each do |slideshow_item|
         %li
           = image_tag slideshow_item.image.file.url(:large)
