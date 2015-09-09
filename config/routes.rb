@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :emails, only: [:create, :destroy]
   resources :pages, only: [:show]
   resources :donations, only: [:new, :create]
-  resources :events, only: [:index, :show]
+#  resources :events, only: [:index, :show]
   namespace :admin do
     get "/" => "dashboard#index"
     resources :dashboard, only: [:index]

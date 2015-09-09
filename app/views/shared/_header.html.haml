@@ -31,5 +31,4 @@
             = fa_icon 'home'
         - NavTab.all.each do |nav_tab|
           %li{class: "#{(is_on_controllers_path(['pages']) && !@page.nil? && nav_tab.page.slug == @page.slug)? 'active' : ''}"}= link_to nav_tab.label, page_path(nav_tab.page.slug), class: 'main-nav-item'
-        %li{class: "#{(is_on_controllers_path(['events']))? 'active' : ''}"}= link_to 'Calendar', events_path, class: 'main-nav-item'
         %li{class: "#{(is_on_controllers_path(['donations']))? 'active' : ''}"}= link_to 'Donations', new_donation_path, class: 'main-nav-item'
