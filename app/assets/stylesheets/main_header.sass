@@ -2,7 +2,6 @@
 
 $header-logo-height: 65px
 $header-height: 88px
-$header-quote-margin: 20px
 
 #main-header
   background: #274472
@@ -47,19 +46,11 @@ $header-quote-margin: 20px
     display: inline-block
     margin-top: 5px
     color: #97ACC3
-    font-size: 18px
+    font-size: 15px
     font-style: italic
-    height: $header-height - $header-quote-margin
-    margin-top: $header-quote-margin
-
-    .line1
-      line-height: ($header-height - ($header-quote-margin * 2)) / 2
-      text-align: left
-
-    .line2
-      line-height: ($header-height - ($header-quote-margin * 2)) / 2
-      text-align: right
-      margin-right: -25px
+    height: $header-height
+    line-height: $header-height
+    overflow: hidden
 
   #main-header-email-signup-container
     float: right
