@@ -16,7 +16,7 @@ gem 'valid_email'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 
 gem 'haml'
 gem 'haml-rails'
@@ -25,8 +25,8 @@ gem 'html2haml'
 gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancancan', '~> 1.10.1'
-gem 'rolify', :git => "git://github.com/EppO/rolify.git"
-gem 'paper_trail', '3.0.6'
+gem 'rolify'
+gem 'paper_trail'
 
 gem 'skylight'
 
@@ -39,12 +39,6 @@ gem 'fog'
 gem 'paperclip'
 
 gem 'tinymce-rails'
-
-gem 'capistrano', '~> 3.0.1'
-gem 'capistrano-rails', '~> 1.1.0'
-gem 'capistrano-rvm', '~> 0.1.0'
-gem 'capistrano-bundler', '>= 1.1.1'
-gem 'rvm1-capistrano3', require: false
 
 gem 'stripe'
 

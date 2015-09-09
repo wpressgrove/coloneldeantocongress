@@ -16,9 +16,3 @@
           .address
             = fa_icon 'map-marker'
             = event.location
-
-    - if show_more_events_link
-      .row
-        .columns.small-12
-          .more-events
-            = link_to 'More Events', events_path
