@@ -1,14 +1,14 @@
-@import "global"
-
-$nav-height: 65px
-$nav-border-color: #DEE0E5
-$nav-highlight-color: #63B2F5
+@import "variables"
 
 #main-nav
+  position: fixed
+  top: $header-height + ($header-padding * 2)
+  width: 100%
   background: #F2F4F9
   height: $nav-height
   border-top: 1px solid #000
-  border-bottom: 1px solid $nav-border-color
+  border-bottom: 1px solid $blue
+  z-index: 999
 
   ul
     display: table

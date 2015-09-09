@@ -16,7 +16,8 @@
   %body
     .flash_messages
       = render 'shared/flash_messages'
-    .main-content
+    #main-content
       = render 'shared/header'
-      = yield
+      .page-content
+        = yield
     = render 'shared/footer'

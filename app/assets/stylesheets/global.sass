@@ -4,9 +4,13 @@
   font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif
   font-size: 14px
 
-.main-content
+#main-content
   height: calc(100% - #{$footer-height})
   overflow: auto
+
+  .page-content
+    height: calc(100% - #{$footer-height} - #{$header-height} - #{$nav-height})
+    margin-top: $nav-height
 
 .notice, .alert
   width: 100%

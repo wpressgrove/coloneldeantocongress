@@ -25,7 +25,28 @@ $(document).ready(function() {
       $('#interview-audio')[0].play();
     }
   });
+
+  setTimeout(function(){ adjustNavWidth(); }, 100);
+
+  $('#main-content').scroll(function(data) {
+    adjustNavTop();
+  });
 });
+
+var adjustNavWidth = function() {
+  var scrollDiv = document.getElementById("main-content");
+  var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+  $('#main-nav').width($(this).width() - scrollbarWidth);
+};
+
+var adjustNavTop = function() {
+  var headerHeight = $('#main-header').outerHeight();
+  var newTop = headerHeight - $('#main-content').scrollTop();
+  if(newTop < 0) {
+    newTop = 0;
+  }
+  $('#main-nav').css('top', newTop + 'px')
+};
 
 var hide_flash_messages = function() {
   if($(".flash_messages").length && $(".flash_messages").html() != '') {
