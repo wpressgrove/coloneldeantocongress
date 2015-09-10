@@ -18,13 +18,38 @@
   line-height: 50px
   padding: 15px
 
-.alert
-  background: #DB1138
-  color: #FFF
+.flash_messages
+  position: fixed
+  top: 0px
+  left: 0px
+  width: 100%
+  z-index: 9999
 
-.notice
-  background: #92C369
-  color: #FFF
+  .alert
+    background: #DB1138
+    color: #FFF
+
+  .notice
+    background: #92C369
+    color: #FFF
+
+.field-error-messages
+  .field-error-message
+    color: #F00
+    font-size: 12px
+
+/* FOUNDATION OVERRIDES */
+
+.field_with_errors
+  label
+    color: #F00 !important
+
+.field_with_errors
+  input
+    background: #FFDDDE !important
+
+  textarea
+    background: #FFDDDE !important
 
 @media #{$medium-down}
   #main-content

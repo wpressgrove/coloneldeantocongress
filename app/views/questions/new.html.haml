@@ -1,0 +1,17 @@
+.row
+  .columns.small-12.medium-6
+    = link_to "mailto:#{ENV['EMAIL']}" do
+      %h3.email Mail
+      .email= ENV['EMAIL']
+      .email= fa_icon 'envelope-o'
+  .columns.small-12.medium-6
+    %h3.address Our Address
+    .address Colonel Dean To Congress
+    .address P.O. Box 905
+    .address Madisonville, Texas 77864
+    .address= fa_icon 'map-marker'
+
+#content-container
+  .row
+    .columns.small-12
+      = render 'form'

@@ -83,6 +83,23 @@ ActiveRecord::Schema.define(version: 20150809235217) do
   add_index "pages", ["required"], name: "index_pages_on_required", using: :btree
   add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
 
+  create_table "questions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.text     "subject"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "questions", ["email"], name: "index_questions_on_email", using: :btree
+  add_index "questions", ["name"], name: "index_questions_on_name", using: :btree
+  add_index "questions", ["state"], name: "index_questions_on_state", using: :btree
+
   create_table "roles", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.integer  "resource_id",   limit: 4

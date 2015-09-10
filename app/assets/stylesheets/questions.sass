@@ -1,0 +1,38 @@
+@import "variables"
+
+.address, .email
+  text-align: center
+  color: #222
+
+  &:last-child
+    margin-bottom: 30px
+
+  i
+    font-size: 100px
+    position: absolute
+    top: 14px
+    left: calc(50% - 25px)
+    color: rgba(168, 37, 18, 0.3)
+
+.email
+  i
+    left: calc(50% - 50px)
+
+h3
+  color: $blue
+  &.address, &.email
+    margin-top: 30px
+
+#content-container
+  background: #F2F4F9
+  padding-top: 50px
+  padding-bottom: 25px
+  border-top: 1px solid #DEE0E5
+  border-bottom: 1px solid #DEE0E5
+
+textarea
+  height: 200px
+
+input[type="submit"]
+  width: 100%
+  border: 2px solid $blue

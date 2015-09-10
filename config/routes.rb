@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :pages, only: [:show]
   resources :donations, only: [:new, :create]
 #  resources :events, only: [:index, :show]
+  resources 'questions', only: [:new, :create]
+
   namespace :admin do
     get "/" => "dashboard#index"
     resources :dashboard, only: [:index]
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
       resources :slideshow_items, only: [:index, :new, :edit, :create, :update, :destroy]
     end
     resources :emails, only: [:index]
+    resources :questions, only: [:index, :show]
     resources :users, only: [:index, :new, :edit, :create, :update, :destroy]
   end
 end

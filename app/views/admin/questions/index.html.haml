@@ -1,0 +1,21 @@
+.emails-page
+  .row
+    .column.large-3 &nbsp
+    .column.large-6
+      %h1 Questions
+    .column.large-3 &nbsp
+
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Email
+        %th Time Submitted
+        %th Actions
+    %tbody
+      - @questions.each do |question|
+        %tr
+          %td= question.name
+          %td= question.email
+          %td= question.created_at.strftime('%b %d %I:%M %p') rescue ''
+          %td= link_to 'View', admin_question_path(question)

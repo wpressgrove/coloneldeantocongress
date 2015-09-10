@@ -1,0 +1,56 @@
+= form_for @question do |f|
+  .row
+    .columns.small-12.medium-6
+      = f.label :name
+      = render 'shared/field_error_messages', messages: @question.errors.messages[:'name']
+    .columns.small-12.medium-6
+      = f.label :email
+      = render 'shared/field_error_messages', messages: @question.errors.messages[:'email']
+  .row
+    .columns.small-12.medium-6
+      = f.text_field :name
+    .columns.small-12.medium-6
+      = f.text_field :email
+
+  .row
+    .columns.small-12.medium-6.large-4
+      = f.label :phone
+      = render 'shared/field_error_messages', messages: @question.errors.messages[:'phone']
+    .columns.small-12.medium-6.large-3
+      = f.label :city
+      = render 'shared/field_error_messages', messages: @question.errors.messages[:'city']
+    .columns.small-12.medium-6.large-2
+      = f.label :state
+      = render 'shared/field_error_messages', messages: @question.errors.messages[:'state']
+    .columns.small-12.medium-6.large-3
+      = f.label :zip
+      = render 'shared/field_error_messages', messages: @question.errors.messages[:'zip']
+  .row
+    .columns.small-12.medium-6.large-4
+      = f.text_field :phone
+    .columns.small-12.medium-6.large-3
+      = f.text_field :city, value: 'Houston'
+    .columns.small-12.medium-6.large-2
+      = f.select :state, options_for_select(state_options, 'TX')
+    .columns.small-12.medium-6.large-3
+      = f.text_field :zip, value: '77315'
+
+  .row
+    .columns.small-12
+      = f.label :subject
+      = render 'shared/field_error_messages', messages: @question.errors.messages[:'subject']
+  .row
+    .columns.small-12
+      = f.text_field :subject
+
+  .row
+    .columns.small-12
+      = f.label :description
+      = render 'shared/field_error_messages', messages: @question.errors.messages[:'description']
+  .row
+    .columns.small-12
+      = f.text_area :description
+
+  .row
+    .columns.small-12.large-offset-4.large-4
+      = f.submit 'SUBMIT', { class: 'button round' }
