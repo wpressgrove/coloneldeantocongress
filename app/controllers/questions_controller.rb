@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(email_params)
     if @question.save
+      QuestionMailer.question_email(@question)
       flash[:notice] = QUESTION_ADDED
       redirect_to root_path
     else

@@ -1,33 +1,4 @@
-%h5
-  Name:
-  = @question.name
-%div
-  Email:
-  = @question.email
-%div
-  Phone:
-  = @question.phone
-
-%br
-
-%div
-  City:
-  = @question.city
-%div
-  State:
-  = @question.state
-%div
-  Zip:
-  = @question.zip
-
-%br
-
-%div
-  Subject:
-  = @question.subject
-%div
-  Description:
-  = @question.description
+= render 'questions/fields', question: @question
 
 %br
 %br
