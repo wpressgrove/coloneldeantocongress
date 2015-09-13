@@ -12,10 +12,9 @@
     .column.small-12.large-4
       #main-header-email-signup-container
         .title
-          %span SIGN UP
-          FOR EMAIL UPDATES
+          %span CONTACT US
         .form
-          = form_for Email.new, remote: true do |f|
+          = form_for Question.new do |f|
             = f.text_field :email, placeholder: 'Email address'
             = button_tag do
               = fa_icon 'long-arrow-right'
