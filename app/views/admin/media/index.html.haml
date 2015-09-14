@@ -1,0 +1,41 @@
+.media-page
+  .row
+    .column.large-3
+      &nbsp
+    .column.large-6
+      %h1 Media
+    .column.large-3
+      .new-image
+        - if can? :create, Image
+          = link_to new_admin_image_path do
+            = fa_icon "plus"
+            %br
+            New Image
+      .new-video
+        - if can? :create, Video
+          = link_to new_admin_video_path do
+            = fa_icon "plus"
+            %br
+            New Video
+  %table
+    %thead
+      %tr
+        %th Title
+        %th Preview
+        %th Edit
+
+    %tbody
+      - @media.each do |medium|
+        %tr
+          %td= medium.title
+          %td
+            - if medium.is_a?(Image)
+              = image_tag medium.file.url(:small)
+            - elsif medium.is_a?(Video)
+              = video_tag medium.file.url(:mp4), controls: true
+          %td
+            - if can? :update, medium
+              - if medium.is_a?(Image)
+                = link_to 'Edit', edit_admin_image_path(medium)
+              - elsif medium.is_a?(Video)
+                = link_to 'Edit', edit_admin_video_path(medium)

@@ -37,6 +37,7 @@ gem 'mini_magick'
 gem 'fastimage'
 gem 'fog'
 gem 'paperclip'
+gem 'paperclip-av-transcoder'
 
 gem 'tinymce-rails'
 

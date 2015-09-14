@@ -19,21 +19,26 @@
                 Manage Pages
   %ul.nav-menu
     - if can? :create, Medium
-      %li{class: (is_on_controllers_path(['admin/media', 'admin/images']))? 'active' : 'media-nav'}
-        = link_to admin_images_path do
+      %li{class: (is_on_controllers_path(['admin/media', 'admin/images', 'admin/videos']))? 'active' : 'media-nav'}
+        = link_to admin_media_path do
           .nav-menu-title
             = fa_icon "picture-o"
             Media
         %ul.sub-nav-menu
-          %li{class: (is_on_controllers_path(['admin/media', 'admin/images']) && params[:action] == 'new')? 'active' : ''}
+          %li{class: (is_on_controllers_path(['admin/images']) && params[:action] == 'new')? 'active' : ''}
             = link_to new_admin_image_path do
               .sub-nav-menu-title
-                = fa_icon "plus"
+                = fa_icon "picture-o"
                 New Image
-          %li{class: (is_on_controllers_path(['admin/media', 'admin/images']) && params[:action] != 'new')? 'active' : ''}
-            = link_to admin_images_path do
+          %li{class: (is_on_controllers_path(['admin/videos']) && params[:action] == 'new')? 'active' : ''}
+            = link_to new_admin_video_path do
               .sub-nav-menu-title
-                = fa_icon "picturoe-o"
+                = fa_icon 'video-camera'
+                New Video
+          %li{class: (is_on_controllers_path(['admin/media', 'admin/images', 'admin/videos']) && params[:action] != 'new')? 'active' : ''}
+            = link_to admin_media_path do
+              .sub-nav-menu-title
+                = fa_icon "picture-o"
                 Manage Images
   %ul.nav-menu
     - if can? :create, NavTab

@@ -1,0 +1,16 @@
+= form_for [:admin, @video] do |f|
+  = render 'shared/form_error_messages', object: @video, name: 'Video'
+
+  = render 'shared/field', f: f, field_type: 'text_field', object: @video, duplicate: nil, field: 'title'
+  .field
+    = label 'Video File', 'Video File'
+    - if @video.file.present?
+      %video
+        %source{src: @video.file.url}
+        Your browser does not support this video.
+    = f.file_field :file
+
+  .actions
+    = f.submit 'Save', class: 'button tiny'
+
+= link_to 'Back', admin_media_path

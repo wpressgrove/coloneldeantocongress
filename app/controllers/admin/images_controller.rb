@@ -2,14 +2,10 @@ class Admin::ImagesController < AdminController
   load_and_authorize_resource
   before_action :set_image, except: [:index]
 
-  def index
-    @images = Image.all
-  end
-
   def create
     @image = Image.new(image_params)
     if @image.save
-      redirect_to admin_images_path
+      redirect_to admin_media_path
     else
       render 'new'
     end
@@ -17,7 +13,7 @@ class Admin::ImagesController < AdminController
 
   def update
     if @image.update_attributes(image_params)
-      redirect_to admin_images_path
+      redirect_to admin_media_path
     else
       render 'edit'
     end

@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     resources :dashboard, only: [:index]
     resources :events, only: [:index, :new, :edit, :create, :update, :destroy]
     resources :donations, only: [:index]
-    resources :images, only: [:index, :new, :edit, :create, :update]
+    resources :media, only: [:index]
+    resources :images, only: [:new, :edit, :create, :update]
+    resources :videos, only: [:new, :edit, :create, :update]
     resources :nav_tabs, only: [:index, :new, :edit, :create, :update, :destroy]
     resources :pages, only: [:index, :new, :edit, :create, :update, :destroy] do
       resources :sidebar_items, only: [:new, :edit, :create, :update, :destroy]
