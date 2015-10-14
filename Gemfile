@@ -1,36 +1,38 @@
 source 'https://rubygems.org'
 ruby "2.2.2"
 
-gem 'rails', '4.2.2'
+# Main Components
+gem 'paper_trail'
 gem 'pg'
+gem 'rails', '4.2.2'
 
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '~> 2.7.2'
-gem 'foundation-rails', '~> 5.5.1'
-gem 'will_paginate', '~> 3.0.6'
+# Authentication
+gem 'cancancan', '~> 1.10.1'
+gem 'devise'
+gem 'rolify'
+
+# Front-end
 gem 'compass'
 gem 'font-awesome-rails'
-gem 'money'
-gem 'valid_email'
-
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'jbuilder'
-
+gem 'foundation-rails', '~> 5.5.1'
 gem 'haml'
 gem 'haml-rails'
 gem 'html2haml'
+gem 'jbuilder'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'money'
+gem 'sass-rails', '~> 5.0'
+gem 'tinymce-rails'
+gem 'uglifier', '~> 2.7.2'
+gem 'will_paginate', '~> 3.0.6'
+gem 'valid_email'
 
-gem 'devise'
-gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'cancancan', '~> 1.10.1'
-gem 'rolify'
-gem 'paper_trail'
-
+# Monitoring
+gem 'google-analytics-rails'
 gem 'skylight'
 
-gem 'savon', "~> 2.3.0"
-gem 'nokogiri'
+#Image Manipulation
 gem 'aws-sdk', '< 2.0'
 gem 'mini_magick'
 gem 'fastimage'
@@ -38,17 +40,11 @@ gem 'fog'
 gem 'paperclip'
 gem 'paperclip-av-transcoder'
 
-gem 'tinymce-rails'
-
+#Payment Gateway
 gem 'stripe'
-
-gem 'launchy'
-
-gem 'google-analytics-rails'
 
 group :production do
   gem 'rails_12factor'
-  gem 'unicorn'
 end
 
 group :test do
