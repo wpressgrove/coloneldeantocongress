@@ -8,7 +8,7 @@ gem 'rails', '4.2.2'
 
 # Authentication
 gem 'cancancan', '1.13.1'
-gem 'devise'
+gem 'devise', '3.5.2'
 gem 'rolify'
 
 # Front-end
