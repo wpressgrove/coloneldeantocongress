@@ -36,7 +36,7 @@ gem 'skylight'
 gem 'aws-sdk', '2.1.29'
 gem 'mini_magick'
 gem 'fastimage'
-gem 'fog'
+gem 'fog', '1.34.0'
 gem 'paperclip', '4.3.1'
 gem 'paperclip-av-transcoder'
 
