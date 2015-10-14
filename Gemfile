@@ -13,7 +13,7 @@ gem 'rolify'
 
 # Front-end
 gem 'compass'
-gem 'font-awesome-rails'
+gem 'font-awesome-rails', '4.4.0.0'
 gem 'foundation-rails', '~> 5.5.1'
 gem 'haml'
 gem 'haml-rails'
