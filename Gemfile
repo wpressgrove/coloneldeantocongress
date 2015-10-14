@@ -14,7 +14,7 @@ gem 'rolify'
 # Front-end
 gem 'compass'
 gem 'font-awesome-rails', '4.4.0.0'
-gem 'foundation-rails', '~> 5.5.1'
+gem 'foundation-rails', '5.5.3.2'
 gem 'haml'
 gem 'haml-rails'
 gem 'html2haml'
