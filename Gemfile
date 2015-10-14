@@ -34,7 +34,7 @@ gem 'skylight'
 
 #Image Manipulation
 gem 'aws-sdk', '2.1.29'
-gem 'mini_magick'
+gem 'mini_magick', '4.3.6'
 gem 'fastimage'
 gem 'fog', '1.34.0'
 gem 'paperclip', '4.3.1'
