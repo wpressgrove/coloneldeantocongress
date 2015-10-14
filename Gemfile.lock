@@ -265,7 +265,6 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.4.1)
       launchy (~> 2.2)
-    libv8 (3.3.10.4)
     listen (2.10.1)
       celluloid (~> 0.16.0)
       rb-fsevent (>= 0.9.3)
@@ -456,8 +455,6 @@ GEM
     stripe (1.23.0)
       json (~> 1.8.1)
       rest-client (~> 1.4)
-    therubyracer (0.10.2)
-      libv8 (~> 3.3.10)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -547,7 +544,6 @@ DEPENDENCIES
   simplecov (~> 0.7.1)
   skylight
   stripe
-  therubyracer (= 0.10.2)
   tinymce-rails
   uglifier (~> 2.7.2)
   unicorn
