@@ -3,7 +3,7 @@ ruby "2.2.2"
 
 # Main Components
 gem 'paper_trail'
-gem 'pg'
+gem 'pg', '0.18.3'
 gem 'rails', '4.2.2'
 
 # Authentication
