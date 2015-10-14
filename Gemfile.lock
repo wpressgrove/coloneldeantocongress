@@ -512,7 +512,7 @@ DEPENDENCIES
   skylight
   stripe
   tinymce-rails
-  uglifier (~> 2.7.2)
+  uglifier (= 2.7.2)
   valid_email
   vcr (~> 2.4.0)
   webmock (~> 1.11.0)

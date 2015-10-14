@@ -24,7 +24,7 @@ gem 'jquery-ui-rails'
 gem 'money'
 gem 'sass-rails', '~> 5.0'
 gem 'tinymce-rails'
-gem 'uglifier', '~> 2.7.2'
+gem 'uglifier', '2.7.2'
 gem 'will_paginate', '~> 3.0.6'
 gem 'valid_email'
 
