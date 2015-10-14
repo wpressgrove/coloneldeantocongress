@@ -37,7 +37,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'mini_magick'
 gem 'fastimage'
 gem 'fog'
-gem 'paperclip'
+gem 'paperclip', '4.3.1'
 gem 'paperclip-av-transcoder'
 
 #Payment Gateway
