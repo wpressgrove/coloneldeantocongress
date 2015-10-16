@@ -30,7 +30,7 @@ gem 'valid_email'
 
 # Monitoring
 gem 'google-analytics-rails'
-gem 'skylight'
+gem 'skylight', '0.8.1'
 
 #Image Manipulation
 gem 'aws-sdk', '2.1.30'
