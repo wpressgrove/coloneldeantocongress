@@ -9,7 +9,7 @@ gem 'rails', '4.2.4'
 # Authentication
 gem 'cancancan', '1.13.1'
 gem 'devise', '3.5.2'
-gem 'rolify'
+gem 'rolify', '4.1.1'
 
 # Front-end
 gem 'compass'
