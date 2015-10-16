@@ -33,7 +33,7 @@ gem 'google-analytics-rails'
 gem 'skylight'
 
 #Image Manipulation
-gem 'aws-sdk', '2.1.29'
+gem 'aws-sdk', '2.1.30'
 gem 'mini_magick', '4.3.6'
 gem 'fastimage'
 gem 'fog', '1.34.0'

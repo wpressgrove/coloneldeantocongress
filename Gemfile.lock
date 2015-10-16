@@ -42,12 +42,12 @@ GEM
     av (0.9.0)
       cocaine (~> 0.5.3)
     awesome_print (1.6.1)
-    aws-sdk (2.1.29)
-      aws-sdk-resources (= 2.1.29)
-    aws-sdk-core (2.1.29)
+    aws-sdk (2.1.30)
+      aws-sdk-resources (= 2.1.30)
+    aws-sdk-core (2.1.30)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.1.29)
-      aws-sdk-core (= 2.1.29)
+    aws-sdk-resources (2.1.30)
+      aws-sdk-core (= 2.1.30)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -474,7 +474,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  aws-sdk (= 2.1.29)
+  aws-sdk (= 2.1.30)
   better_errors
   binding_of_caller
   cancancan (= 1.13.1)
