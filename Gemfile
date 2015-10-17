@@ -51,7 +51,6 @@ group :test do
   gem 'database_cleaner', '1.5.1', :require => false
   gem 'rspec'
   gem 'rspec-rails', '3.3.3'
-  gem 'parallel_tests'
   gem 'fabrication', '2.14.1'
   gem 'shoulda'
   gem 'simplecov', '0.10.0', require: false
@@ -59,8 +58,6 @@ group :test do
   gem 'webmock', '1.22.1', :require => false
   gem 'awesome_print'
   gem 'email_spec'
-  gem 'resque_spec'
-  gem 'guard-rspec', '4.6.4', require: false
   gem 'mocha'
 end
 
