@@ -394,7 +394,7 @@ GEM
     rspec-mocks (3.3.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
-    rspec-rails (3.3.2)
+    rspec-rails (3.3.3)
       actionpack (>= 3.0, < 4.3)
       activesupport (>= 3.0, < 4.3)
       railties (>= 3.0, < 4.3)
@@ -512,7 +512,7 @@ DEPENDENCIES
   resque_spec
   rolify (= 4.1.1)
   rspec
-  rspec-rails
+  rspec-rails (= 3.3.3)
   sass-rails (= 5.0.4)
   shoulda
   simplecov (= 0.10.0)

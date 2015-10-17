@@ -50,7 +50,7 @@ end
 group :test do
   gem 'database_cleaner', '1.5.1', :require => false
   gem 'rspec'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '3.3.3'
   gem 'parallel_tests'
   gem 'fabrication', '2.14.1'
   gem 'shoulda'
