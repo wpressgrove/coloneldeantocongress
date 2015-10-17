@@ -80,7 +80,7 @@ GEM
       sass (>= 3.2, < 3.5)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
-    database_cleaner (1.4.1)
+    database_cleaner (1.5.1)
     debug_inspector (0.0.2)
     devise (3.5.2)
       bcrypt (~> 3.0)
@@ -485,7 +485,7 @@ DEPENDENCIES
   binding_of_caller
   cancancan (= 1.13.1)
   compass
-  database_cleaner
+  database_cleaner (= 1.5.1)
   devise (= 3.5.2)
   email_spec
   fabrication
