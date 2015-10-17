@@ -41,7 +41,7 @@ gem 'paperclip', '4.3.1'
 gem 'paperclip-av-transcoder'
 
 #Payment Gateway
-gem 'stripe'
+gem 'stripe', '1.30.2'
 
 group :production do
   gem 'rails_12factor'
