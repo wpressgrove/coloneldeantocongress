@@ -60,7 +60,7 @@ group :test do
   gem 'awesome_print'
   gem 'email_spec'
   gem 'resque_spec'
-  gem 'guard-rspec', require: false
+  gem 'guard-rspec', '4.6.4', require: false
   gem 'mocha'
 end
 
