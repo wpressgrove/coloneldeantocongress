@@ -52,7 +52,7 @@ group :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'parallel_tests'
-  gem 'fabrication'
+  gem 'fabrication', '2.14.1'
   gem 'shoulda'
   gem 'simplecov', '0.10.0', require: false
   gem 'vcr', '2.9.3'
