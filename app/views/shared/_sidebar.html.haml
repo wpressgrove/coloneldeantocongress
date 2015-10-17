@@ -26,3 +26,12 @@
             = select_tag :amount, options_for_select(['$25', '$50', '$100', '$250', '$500', '$1000', '$2700'], '$25')
           .columns.small-5
             = submit_tag 'DONATE'
+  .sidebar-item.sidebar-zipcode-finder
+    .sidebar-icon= fa_icon 'street-view'
+    .sidebar-title Do I Live In District 8?
+    .sidebar-sub
+      Find my zip code
+      = form_for Question.new do |f|
+        = f.text_field :zip, placeholder: 'ex. 90210'
+        = button_tag do
+          = fa_icon 'long-arrow-right'
