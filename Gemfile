@@ -56,7 +56,7 @@ group :test do
   gem 'simplecov', '~> 0.7.1', require: false
   gem 'database_cleaner', :require => false
   gem 'vcr', '~> 2.4.0'
-  gem 'webmock', '~> 1.11.0', :require => false
+  gem 'webmock', '1.22.1', :require => false
   gem 'awesome_print'
   gem 'email_spec'
   gem 'resque_spec'
