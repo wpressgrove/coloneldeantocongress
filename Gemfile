@@ -53,7 +53,7 @@ group :test do
   gem 'parallel_tests'
   gem 'fabrication'
   gem 'shoulda'
-  gem 'simplecov', '~> 0.7.1', require: false
+  gem 'simplecov', '0.10.0', require: false
   gem 'database_cleaner', :require => false
   gem 'vcr', '2.9.3'
   gem 'webmock', '1.22.1', :require => false
