@@ -462,7 +462,7 @@ GEM
     valid_email (0.0.11)
       activemodel
       mail (~> 2.6.1)
-    vcr (2.4.0)
+    vcr (2.9.3)
     vegas (0.1.11)
       rack (>= 1.0.0)
     warden (1.2.3)
@@ -525,7 +525,7 @@ DEPENDENCIES
   tinymce-rails (= 4.2.6)
   uglifier (= 2.7.2)
   valid_email
-  vcr (~> 2.4.0)
+  vcr (= 2.9.3)
   webmock (= 1.22.1)
   will_paginate (~> 3.0.6)
 

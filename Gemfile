@@ -55,7 +55,7 @@ group :test do
   gem 'shoulda'
   gem 'simplecov', '~> 0.7.1', require: false
   gem 'database_cleaner', :require => false
-  gem 'vcr', '~> 2.4.0'
+  gem 'vcr', '2.9.3'
   gem 'webmock', '1.22.1', :require => false
   gem 'awesome_print'
   gem 'email_spec'
