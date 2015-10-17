@@ -448,7 +448,7 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
-    tinymce-rails (4.1.6)
+    tinymce-rails (4.2.6)
       railties (>= 3.1.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -520,7 +520,7 @@ DEPENDENCIES
   simplecov (~> 0.7.1)
   skylight (= 0.8.1)
   stripe (= 1.30.2)
-  tinymce-rails
+  tinymce-rails (= 4.2.6)
   uglifier (= 2.7.2)
   valid_email
   vcr (~> 2.4.0)
